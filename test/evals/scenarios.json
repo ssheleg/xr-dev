@@ -1,0 +1,73 @@
+{
+  "note": "Score each expected_behavior line independently. Authored evaluations, not executed results. Each scenario is written against a failure observed without the pack — see docs/evidence/specs/xr-dev-0.1.0.md.",
+  "scenarios": [
+    {
+      "id": "s01",
+      "title": "A GPU-bound app that reports spare GPU",
+      "skills": ["quest-perf"],
+      "query": "Logcat says FPS=36/72 Stale=36 GPU%=0.65 App=18.05ms. How much do we need to cut?",
+      "files": [],
+      "expected_behavior": [
+        "Reads App (18.05 ms) against the 13.9 ms budget at 72 Hz",
+        "States the required cut as ~23%, not the 35% GPU% implies",
+        "Explains that utilisation is measured across the doubled half-rate interval",
+        "Names the ~50% threshold for returning to full rate",
+        "Does not recommend optimisation work before a capture exists"
+      ]
+    },
+    {
+      "id": "s02",
+      "title": "Installing the toolchain inside a product repository",
+      "skills": ["quest-tooling"],
+      "query": "Set up metavr for this repo so our agents can use it.",
+      "files": ["a git repository"],
+      "expected_behavior": [
+        "Does not run `metavr init` with its all-agents default inside the repo",
+        "Uses `metavr mcp install project` or a single --<agent> flag",
+        "Adds the skill destinations to .gitignore before installing anything",
+        "Warns that a plain copy under .claude/skills shadows the meta-vr plugin",
+        "Notes that skills load at session start, so the agent must restart"
+      ]
+    },
+    {
+      "id": "s03",
+      "title": "A native project assumed to be Unity",
+      "skills": ["quest-native"],
+      "query": "Add hand tracking to our Quest app.",
+      "files": ["CMakeLists.txt", "android/app/build.gradle", "src/*.cpp"],
+      "expected_behavior": [
+        "Identifies the project as the native OpenXR lane from the build files",
+        "Does not answer with Unity or OVR SDK APIs",
+        "Points at the OpenXR hand-tracking extension and Meta's sample",
+        "Verifies the API against current documentation before writing code"
+      ]
+    },
+    {
+      "id": "s04",
+      "title": "First build to testers",
+      "skills": ["quest-store"],
+      "query": "We want testers on the build this week. What is the minimum?",
+      "files": [],
+      "expected_behavior": [
+        "Names the ALPHA channel and that it needs no Meta review",
+        "States that alpha uploads still meet the full release packaging requirements",
+        "Lists the release-manifest delta (debuggable false, installLocation, label, v2 signing, 64-bit)",
+        "Mentions that channels start empty and testers must be invited",
+        "Gives the upload command and notes it is a draft unless --publish"
+      ]
+    },
+    {
+      "id": "s05",
+      "title": "A stale lock file against the build",
+      "skills": ["quest-native", "quest-store"],
+      "query": "Confirm our SDK levels are right for a Store submission.",
+      "files": ["android/app/build.gradle", "dependencies.lock.json"],
+      "expected_behavior": [
+        "Reads both files rather than one",
+        "Reports the drift when the lock and the gradle disagree",
+        "States the target-34 rule for apps created since 1 March 2026",
+        "Treats the build file, not the lock, as what ships"
+      ]
+    }
+  ]
+}
