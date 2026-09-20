@@ -79,6 +79,22 @@
         "States the target-34 rule for apps created since 1 March 2026",
         "Treats the build file, not the lock, as what ships"
       ]
+    },
+    {
+      "id": "s06",
+      "title": "A panel-per-item design in Spatial SDK",
+      "skills": [
+        "quest-spatial"
+      ],
+      "query": "We want a Spatial SDK app where every open document is its own video-capable panel, maybe a dozen at once. Sketch the architecture.",
+      "files": [],
+      "expected_behavior": [
+        "Names the panel budget before the architecture, not after",
+        "States that video panels dip below 90 FPS at three and stay below at five",
+        "Proposes a design that does not scale panels with items",
+        "Distinguishes activity-based panels (two) from view panels",
+        "Routes implementation detail to Meta's hz-spatial-sdk rather than restating it"
+      ]
     }
   ]
 }

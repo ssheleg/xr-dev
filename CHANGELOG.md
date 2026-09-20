@@ -4,6 +4,31 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] — 2026-09-20
+
+### Added
+
+- **`quest-spatial`** — the Kotlin lane. Meta Spatial SDK is how an Android team
+  reaches Horizon OS, and the pack had no answer for it: which lane it is right
+  for, the toolchain it demands (Horizon OS v69+, AGP 8.11.1 under the Gradle
+  9.4.1 wrapper, Kotlin 2.1.0, JDK 17, Spatial Editor for all but two samples),
+  and the budgets that decide a design rather than tune it — 2,000 entity
+  operations per tick, 500 physics objects, ~1,000 scene-graph entities, and a
+  panel table whose sharpest rows are three video panels and two activity-based
+  ones.
+- Its three references: `samples-map.md` (15 official samples mapped to the
+  question each answers, plus the `hzdb` MCP server a clone brings with it),
+  `docs-map.md` (197 pages, by prefix and by topic), `budgets-and-traps.md`
+  (the tables, and the five issues Meta lists against itself — including debug
+  builds being slow enough to invalidate a measurement, and `finish()` on an
+  immersive activity crashing inside `libMetaSpatialSDK.so`).
+
+### Changed
+
+- The pack now routes six lanes, not five; Meta's `hz-spatial-sdk` still owns
+  the implementation of a Spatial SDK app, and `quest-spatial` says when to be
+  there at all and where to read.
+
 ## [0.1.5] — 2026-09-20
 
 ### Fixed
@@ -89,6 +114,7 @@ First release. Five skills, seven references.
   versus A-Frame, Bubblewrap packaging with the Digital Asset Links step, and
   the performance honesty a browser build needs.
 
+[0.2.0]: https://github.com/ssheleg/xr-dev/releases/tag/v0.2.0
 [0.1.5]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.5
 [0.1.4]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.4
 [0.1.3]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.3

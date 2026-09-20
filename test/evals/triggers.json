@@ -9,7 +9,9 @@
       "q04",
       "q05",
       "q06",
-      "q12"
+      "q12",
+      "q15",
+      "q18"
     ],
     "validation": [
       "q07",
@@ -18,7 +20,9 @@
       "q10",
       "q11",
       "q13",
-      "q14"
+      "q14",
+      "q16",
+      "q17"
     ]
   },
   "queries": [
@@ -119,6 +123,34 @@
       "query": "Profile this Node.js service's CPU usage",
       "should_trigger": false,
       "why": "not XR; quest-perf must not claim general profiling"
+    },
+    {
+      "id": "q15",
+      "lang": "ru",
+      "query": "Делаем приложение для Quest на Kotlin — с чего начать?",
+      "should_trigger": true,
+      "why": "quest-spatial lane decision"
+    },
+    {
+      "id": "q16",
+      "lang": "en",
+      "query": "How many video panels can a Spatial SDK app keep open at 90 FPS?",
+      "should_trigger": true,
+      "why": "quest-spatial runtime budgets"
+    },
+    {
+      "id": "q17",
+      "lang": "en",
+      "query": "Our Spatial SDK build fails during CMake model sync after a Gradle upgrade",
+      "should_trigger": true,
+      "why": "quest-spatial toolchain trap"
+    },
+    {
+      "id": "q18",
+      "lang": "en",
+      "query": "Write a Kotlin Android app for a phone with a RecyclerView",
+      "should_trigger": false,
+      "why": "plain Android — no headset, no lane in this pack"
     }
   ]
 }

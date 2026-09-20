@@ -15,7 +15,7 @@ description: >-
   PWA listing (quest-webxr).
 license: MIT
 metadata:
-  version: 0.1.5
+  version: 0.2.0
 ---
 
 # Shipping to the Meta Horizon Store
