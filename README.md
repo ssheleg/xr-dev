@@ -84,6 +84,10 @@ hardware.
 
 ## Verifying a change
 
+<!-- commands-run-in: a clone -->
+From a clone of this repository — the published package ships the skills, not
+the test suite:
+
 ```bash
 npm test               # the house validator: structure, budgets, references, links
 npm run test:negatives # plants each defect and fails if a guard stays green

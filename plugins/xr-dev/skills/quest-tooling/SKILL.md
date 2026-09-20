@@ -3,10 +3,9 @@ name: quest-tooling
 description: >-
   Use when setting up or driving the Meta Quest toolchain on a development
   machine - the metavr CLI and its MCP server, Meta's agentic skills, connecting
-  and inspecting a headset, installing the managed developer tools (Perfetto,
-  RenderDoc, OVR Metrics, platform-utils, XR Simulator, SpatialSim, XR Operator),
-  and working with no headset at all. Also the hygiene - one install channel per
-  agent, and never vendoring skill copies into a product repository. Triggers -
+  a headset, installing the managed tools (Perfetto, RenderDoc, OVR Metrics,
+  platform-utils, XR Simulator), and working with no headset at all. Also the
+  hygiene - one install channel per agent, and no skill copies in a repository. Triggers -
   "metavr", "metavr init", "Meta VR CLI", "Quest MCP" / "MCP для Quest",
   "connect the headset" / "подключить шлем", "adb to Quest" / "adb к шлему",
   "install the APK" / "поставить apk на шлем", "developer mode" / "режим
@@ -16,7 +15,7 @@ description: >-
   a capture (quest-perf), or submitting a build (quest-store).
 license: MIT
 metadata:
-  version: 0.1.0
+  version: 0.1.1
 ---
 
 # The Quest toolchain: one CLI, two interfaces, one channel per agent
