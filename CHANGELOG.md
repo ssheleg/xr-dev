@@ -4,6 +4,17 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] — 2026-09-20
+
+### Changed
+
+- `quest-spatial`'s description trimmed to 882 characters. It shipped at 955 and
+  moved the family's reserve ratchet — the 60 characters below the 970 cap exist
+  for the "NOT for" clause the next neighbouring skill will force, and this pack
+  now sits beside Meta's `hz-spatial-sdk`, which is exactly such a neighbour.
+- The card the umbrella generates for this member, regenerated from the new
+  manifest.
+
 ## [0.2.0] — 2026-09-20
 
 ### Added
@@ -114,6 +125,7 @@ First release. Five skills, seven references.
   versus A-Frame, Bubblewrap packaging with the Digital Asset Links step, and
   the performance honesty a browser build needs.
 
+[0.2.1]: https://github.com/ssheleg/xr-dev/releases/tag/v0.2.1
 [0.2.0]: https://github.com/ssheleg/xr-dev/releases/tag/v0.2.0
 [0.1.5]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.5
 [0.1.4]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.4

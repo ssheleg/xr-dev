@@ -2,11 +2,10 @@
 name: quest-spatial
 description: >-
   Use when a Meta Quest app is built with Meta Spatial SDK — Kotlin and Android
-  rather than Unity or raw OpenXR: deciding whether that lane is the right one,
-  the toolchain versions it demands, the ECS data model, panels as real Android
-  views, hybrid 2D-to-immersive apps, the runtime budgets that decide a design,
-  the known issues that waste a day, and which of the 15 official samples and
-  197 documentation pages answers a given question. Triggers - "Spatial SDK" /
+  rather than Unity or raw OpenXR: whether that lane is right, the toolchain it
+  demands, the ECS model, panels as real Android views, hybrid apps, the runtime
+  budgets that decide a design, the known issues that waste a day, and which
+  sample or documentation page answers a given question. Triggers - "Spatial SDK" /
   "Спатиал SDK", "Meta Spatial SDK", "Kotlin app for Quest" / "приложение на
   Kotlin для Quest", "spatial panels" / "панели в VR", "Spatial Editor",
   "hybrid app" / "гибридное приложение", "glXF", "MRUK", "com.meta.spatial",
@@ -16,7 +15,7 @@ description: >-
   (quest-perf), or Store submission (quest-store).
 license: MIT
 metadata:
-  version: 0.2.0
+  version: 0.2.1
 ---
 
 # Meta Spatial SDK: the Android lane onto Horizon OS
