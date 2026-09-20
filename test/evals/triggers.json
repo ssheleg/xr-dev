@@ -2,23 +2,123 @@
   "skill": "xr-dev",
   "note": "Behavioral trigger cases. Run each in a fresh session; the committed data holds no model results. Baseline failures they were written against are in docs/evidence/specs/xr-dev-0.1.0.md.",
   "split": {
-    "train": ["q01", "q02", "q03", "q04", "q05", "q06", "q07"],
-    "validation": ["q08", "q09", "q10", "q11", "q12", "q13", "q14"]
+    "train": [
+      "q01",
+      "q02",
+      "q03",
+      "q04",
+      "q05",
+      "q06",
+      "q12"
+    ],
+    "validation": [
+      "q07",
+      "q08",
+      "q09",
+      "q10",
+      "q11",
+      "q13",
+      "q14"
+    ]
   },
   "queries": [
-    {"id": "q01", "lang": "en", "query": "Set up an OpenXR app in C++ for Quest 3 with Gradle and the NDK", "should_trigger": true, "why": "quest-native lane"},
-    {"id": "q02", "lang": "ru", "query": "Какой targetSdk ставить для приложения под Quest?", "should_trigger": true, "why": "quest-native SDK levels, the 2026 rule"},
-    {"id": "q03", "lang": "en", "query": "The headset shows 65% GPU but we are dropping to 36 fps — where is the headroom?", "should_trigger": true, "why": "quest-perf, the GPU% trap"},
-    {"id": "q04", "lang": "ru", "query": "Сними перфетто-трейс со шлема и скажи, во что упёрлись", "should_trigger": true, "why": "quest-perf capture playbook"},
-    {"id": "q05", "lang": "en", "query": "Install metavr and wire its MCP server into this project", "should_trigger": true, "why": "quest-tooling install channels"},
-    {"id": "q06", "lang": "ru", "query": "Как раздать альфа-билд тестерам без ревью Meta?", "should_trigger": true, "why": "quest-store release channels"},
-    {"id": "q07", "lang": "en", "query": "Package our WebXR site as a PWA for the Horizon Store", "should_trigger": true, "why": "quest-webxr bubblewrap path"},
-    {"id": "q08", "lang": "en", "query": "Our immersive PWA installs but never enters VR", "should_trigger": true, "why": "quest-webxr asset links"},
-    {"id": "q09", "lang": "ru", "query": "Meta отклонила билд по VRC.Quest.Packaging.1 — что чинить?", "should_trigger": true, "why": "quest-store VRC list"},
-    {"id": "q10", "lang": "en", "query": "Which Meta developer tools should this machine have for Quest work?", "should_trigger": true, "why": "quest-tooling tool matrix"},
-    {"id": "q11", "lang": "en", "query": "Add a passthrough layer to our native OpenXR renderer", "should_trigger": true, "why": "quest-native extensions map"},
-    {"id": "q12", "lang": "en", "query": "Write a Unity script that moves the OVRCameraRig", "should_trigger": false, "why": "Unity lane — Meta's hz-unity-* skills own it; xr-dev should route, not answer"},
-    {"id": "q13", "lang": "ru", "query": "Сделай телеграм-бота для рассылки", "should_trigger": false, "why": "unrelated domain"},
-    {"id": "q14", "lang": "en", "query": "Profile this Node.js service's CPU usage", "should_trigger": false, "why": "not XR; quest-perf must not claim general profiling"}
+    {
+      "id": "q01",
+      "lang": "en",
+      "query": "Set up an OpenXR app in C++ for Quest 3 with Gradle and the NDK",
+      "should_trigger": true,
+      "why": "quest-native lane"
+    },
+    {
+      "id": "q02",
+      "lang": "ru",
+      "query": "Какой targetSdk ставить для приложения под Quest?",
+      "should_trigger": true,
+      "why": "quest-native SDK levels, the 2026 rule"
+    },
+    {
+      "id": "q03",
+      "lang": "en",
+      "query": "The headset shows 65% GPU but we are dropping to 36 fps — where is the headroom?",
+      "should_trigger": true,
+      "why": "quest-perf, the GPU% trap"
+    },
+    {
+      "id": "q04",
+      "lang": "ru",
+      "query": "Сними перфетто-трейс со шлема и скажи, во что упёрлись",
+      "should_trigger": true,
+      "why": "quest-perf capture playbook"
+    },
+    {
+      "id": "q05",
+      "lang": "en",
+      "query": "Install metavr and wire its MCP server into this project",
+      "should_trigger": true,
+      "why": "quest-tooling install channels"
+    },
+    {
+      "id": "q06",
+      "lang": "ru",
+      "query": "Как раздать альфа-билд тестерам без ревью Meta?",
+      "should_trigger": true,
+      "why": "quest-store release channels"
+    },
+    {
+      "id": "q07",
+      "lang": "en",
+      "query": "Package our WebXR site as a PWA for the Horizon Store",
+      "should_trigger": true,
+      "why": "quest-webxr bubblewrap path"
+    },
+    {
+      "id": "q08",
+      "lang": "en",
+      "query": "Our immersive PWA installs but never enters VR",
+      "should_trigger": true,
+      "why": "quest-webxr asset links"
+    },
+    {
+      "id": "q09",
+      "lang": "ru",
+      "query": "Meta отклонила билд по VRC.Quest.Packaging.1 — что чинить?",
+      "should_trigger": true,
+      "why": "quest-store VRC list"
+    },
+    {
+      "id": "q10",
+      "lang": "en",
+      "query": "Which Meta developer tools should this machine have for Quest work?",
+      "should_trigger": true,
+      "why": "quest-tooling tool matrix"
+    },
+    {
+      "id": "q11",
+      "lang": "en",
+      "query": "Add a passthrough layer to our native OpenXR renderer",
+      "should_trigger": true,
+      "why": "quest-native extensions map"
+    },
+    {
+      "id": "q12",
+      "lang": "en",
+      "query": "Write a Unity script that moves the OVRCameraRig",
+      "should_trigger": false,
+      "why": "Unity lane — Meta's hz-unity-* skills own it; xr-dev should route, not answer"
+    },
+    {
+      "id": "q13",
+      "lang": "ru",
+      "query": "Сделай телеграм-бота для рассылки",
+      "should_trigger": false,
+      "why": "unrelated domain"
+    },
+    {
+      "id": "q14",
+      "lang": "en",
+      "query": "Profile this Node.js service's CPU usage",
+      "should_trigger": false,
+      "why": "not XR; quest-perf must not claim general profiling"
+    }
   ]
 }

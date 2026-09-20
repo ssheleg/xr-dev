@@ -4,7 +4,9 @@
     {
       "id": "s01",
       "title": "A GPU-bound app that reports spare GPU",
-      "skills": ["quest-perf"],
+      "skills": [
+        "quest-perf"
+      ],
       "query": "Logcat says FPS=36/72 Stale=36 GPU%=0.65 App=18.05ms. How much do we need to cut?",
       "files": [],
       "expected_behavior": [
@@ -18,9 +20,11 @@
     {
       "id": "s02",
       "title": "Installing the toolchain inside a product repository",
-      "skills": ["quest-tooling"],
-      "query": "Set up metavr for this repo so our agents can use it.",
-      "files": ["a git repository"],
+      "skills": [
+        "quest-tooling"
+      ],
+      "query": "Set up metavr for this repo so our agents can use it. The working directory is a git repository with committed source.",
+      "files": [],
       "expected_behavior": [
         "Does not run `metavr init` with its all-agents default inside the repo",
         "Uses `metavr mcp install project` or a single --<agent> flag",
@@ -32,9 +36,11 @@
     {
       "id": "s03",
       "title": "A native project assumed to be Unity",
-      "skills": ["quest-native"],
-      "query": "Add hand tracking to our Quest app.",
-      "files": ["CMakeLists.txt", "android/app/build.gradle", "src/*.cpp"],
+      "skills": [
+        "quest-native"
+      ],
+      "query": "Add hand tracking to our Quest app. The repository has CMakeLists.txt, android/app/build.gradle and C++ sources under src/ — no Unity project.",
+      "files": [],
       "expected_behavior": [
         "Identifies the project as the native OpenXR lane from the build files",
         "Does not answer with Unity or OVR SDK APIs",
@@ -45,7 +51,9 @@
     {
       "id": "s04",
       "title": "First build to testers",
-      "skills": ["quest-store"],
+      "skills": [
+        "quest-store"
+      ],
       "query": "We want testers on the build this week. What is the minimum?",
       "files": [],
       "expected_behavior": [
@@ -59,9 +67,12 @@
     {
       "id": "s05",
       "title": "A stale lock file against the build",
-      "skills": ["quest-native", "quest-store"],
-      "query": "Confirm our SDK levels are right for a Store submission.",
-      "files": ["android/app/build.gradle", "dependencies.lock.json"],
+      "skills": [
+        "quest-native",
+        "quest-store"
+      ],
+      "query": "Confirm our SDK levels are right for a Store submission. android/app/build.gradle says targetSdk 34; dependencies.lock.json says 32.",
+      "files": [],
       "expected_behavior": [
         "Reads both files rather than one",
         "Reports the drift when the lock and the gradle disagree",

@@ -37,10 +37,19 @@ BODY_TOKENS_HOUSE = 4750
 CHARS_PER_TOKEN = 3.6
 
 # Pinned, not pattern-matched: the address that was wrong looked exactly right.
+SCHEMA_HOST = "https://json.schemastore.org/"
 SCHEMAS = {
-    "marketplace": "https://json.schemastore.org/claude-code-marketplace.json",
-    "plugin": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+    "marketplace": SCHEMA_HOST + "claude-code-marketplace.json",
+    "plugin": SCHEMA_HOST + "claude-code-plugin-manifest.json",
 }
+# The same pins keyed by the file that must declare them. `test/check_schemas.py`
+# — the online half, outside `npm test` — imports this map, so the address lives
+# in exactly one place and the two halves cannot disagree about it.
+SCHEMA_FOR = {
+    ".claude-plugin/marketplace.json": SCHEMAS["marketplace"],
+    f"plugins/{PLUGIN}/.claude-plugin/plugin.json": SCHEMAS["plugin"],
+}
+DEAD_SCHEMAS = {SCHEMA_HOST + "claude-code-plugin.json": "404"}
 
 SECRET_SHAPES = [
     re.compile(r"\bsk-[A-Za-z0-9]{16,}"),

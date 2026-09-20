@@ -4,6 +4,26 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] — 2026-09-20
+
+### Fixed
+
+- CI was red on the first push and the repository did not know it: the online
+  schema check imports `SCHEMA_FOR` from the validator, which exported only an
+  internal `SCHEMAS` map, and the audit job ran a `test/evals_validate.py` that
+  had never been copied in. Both closed — the pinned addresses now live in one
+  map that both halves read, and the eval data validates with its own planted
+  defect.
+
+### Added
+
+- `test/evals/README.md` and `RESULTS.md`. Results says, in as many words, that
+  no model run has happened yet: an unrun eval reported as a pass is worse than
+  no eval.
+- The trigger split now carries **both classes in each half** — a train split of
+  positives only cannot show over-firing, which is the failure mode that matters
+  beside Meta's 29 neighbouring skills.
+
 ## [0.1.3] — 2026-09-20
 
 ### Added
@@ -60,6 +80,7 @@ First release. Five skills, seven references.
   versus A-Frame, Bubblewrap packaging with the Digital Asset Links step, and
   the performance honesty a browser build needs.
 
+[0.1.4]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.4
 [0.1.3]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.3
 [0.1.2]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.2
 [0.1.1]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.1
