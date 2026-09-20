@@ -4,6 +4,15 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.5] — 2026-09-20
+
+### Fixed
+
+- `test/social_preview.py`, the last CI step this repository inherited a job for
+  and never inherited the script for. Every step of both jobs has now been run
+  locally against this tree before the push, which is how the previous two
+  failures should have been caught.
+
 ## [0.1.4] — 2026-09-20
 
 ### Fixed
@@ -80,6 +89,7 @@ First release. Five skills, seven references.
   versus A-Frame, Bubblewrap packaging with the Digital Asset Links step, and
   the performance honesty a browser build needs.
 
+[0.1.5]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.5
 [0.1.4]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.4
 [0.1.3]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.3
 [0.1.2]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.2
