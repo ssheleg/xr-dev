@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] — 2026-09-20
+
+### Added
+
+- `docs/assets/social-preview.png` — the card the family umbrella generates for
+  this member from `skills.json`, byte-compared in its suite so the pixels and
+  the manifest cannot drift apart.
+
 ## [0.1.2] — 2026-09-20
 
 ### Added
@@ -52,6 +60,7 @@ First release. Five skills, seven references.
   versus A-Frame, Bubblewrap packaging with the Digital Asset Links step, and
   the performance honesty a browser build needs.
 
+[0.1.3]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.3
 [0.1.2]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.2
 [0.1.1]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.1
 [0.1.0]: https://github.com/ssheleg/xr-dev/releases/tag/v0.1.0
