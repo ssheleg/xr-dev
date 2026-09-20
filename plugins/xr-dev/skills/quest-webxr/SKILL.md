@@ -14,7 +14,7 @@ description: >-
   (quest-store).
 license: MIT
 metadata:
-  version: 0.1.1
+  version: 0.1.2
 ---
 
 # WebXR and PWAs on Horizon OS

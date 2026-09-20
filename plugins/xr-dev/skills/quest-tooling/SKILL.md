@@ -15,7 +15,7 @@ description: >-
   a capture (quest-perf), or submitting a build (quest-store).
 license: MIT
 metadata:
-  version: 0.1.1
+  version: 0.1.2
 ---
 
 # The Quest toolchain: one CLI, two interfaces, one channel per agent

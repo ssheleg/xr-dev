@@ -15,7 +15,7 @@ description: >-
   profiling (quest-perf), not for Store submission (quest-store).
 license: MIT
 metadata:
-  version: 0.1.1
+  version: 0.1.2
 ---
 
 # Native OpenXR on Horizon OS
