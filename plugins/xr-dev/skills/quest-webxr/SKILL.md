@@ -15,7 +15,7 @@ description: >-
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # WebXR and PWAs on Horizon OS

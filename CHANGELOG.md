@@ -4,6 +4,11 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.1 — 2026-09-21
+
+- Make GitHub OIDC the explicit npm publishing path, without a stored npm token.
+- Normalize npm repository metadata and document tag-triggered releases, initial trust setup and recovery.
+
 ## 0.3.0 — 2026-09-21
 
 - Add quest-lifecycle: a portable product-stage map with proactive next actions, engine selection, immersive-design acceptance and evidence gates.

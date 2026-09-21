@@ -1,6 +1,6 @@
 {
   "name": "@ssheleg/xr-dev",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Seven skills for the Meta Quest product lifecycle: platform and engine discovery, immersive design, native OpenXR, Kotlin Spatial and hybrid apps, WebXR/PWA, rendering experiments, tool and source discovery, Store submission, monetization, launch assets and post-launch operation. Agents receive stage-specific next actions, evidence gates and fallbacks when tools or devices are absent. Engine specialists remain separate; live requirements are verified against current Meta documentation.",
   "bin": {
     "xr-dev": "bin/xr-dev.js"
@@ -16,7 +16,10 @@
     "CHANGELOG.md",
     "SECURITY.md"
   ],
-  "repository": "github:ssheleg/xr-dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssheleg/xr-dev.git"
+  },
   "homepage": "https://skills.sshlg.me/skills/xr-dev/",
   "license": "MIT",
   "author": {
