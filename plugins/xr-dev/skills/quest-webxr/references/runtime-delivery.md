@@ -29,3 +29,12 @@ Browser hosting, installable PWA and a Store-listed wrapper are different delive
 ## Evidence and fallback
 
 Keep console/network traces, session errors, input checks and device frame measurements. A desktop emulation or static screenshot does not prove immersive interaction. If no WebXR device is attached, complete ordinary-screen and source/build tests and enumerate the remaining real-session checks.
+
+## Product and release seam
+
+Keep browser delivery separate from packaged PWA submission. Test session exit and
+reentry, hidden-tab suspension, input-source changes, permission denial, offline
+asset loading/cache versioning and a useful non-XR route. Store eligibility,
+monetization and data declarations belong to the actual distribution surface;
+a working HTTPS page does not prove packaged launch or purchase support. Route
+a multi-stage launch to quest-lifecycle and the applicable Store checks.

@@ -14,8 +14,9 @@ description: >-
   Unity (Meta's hz-unity-* skills), WebXR (quest-webxr), profiling a build
   (quest-perf), or Store submission (quest-store).
 license: MIT
+compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: 0.2.1
+  version: "0.3.0"
 ---
 
 # Meta Spatial SDK: the Android lane onto Horizon OS
@@ -24,6 +25,10 @@ Spatial SDK lets an **Android** team ship an immersive app in Kotlin: Android
 Studio, Gradle, Jetpack Compose, the libraries they already use — with OpenXR
 underneath and an ECS data model on top. A panel in the scene is a real Android
 view, not a texture someone drew to look like one.
+
+For a whole-product roadmap or stage audit, use `quest-lifecycle`; a single technical task stays with this owner. If absent, identify the current stage, its evidence and the next prerequisite inline.
+
+Read `references/hybrid-activities.md` when mixing panel and immersive activities: exclusive/cooperative modes, state ownership and transition tests.
 
 ## Step 0 — is this the right lane?
 

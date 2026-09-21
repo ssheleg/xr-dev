@@ -14,8 +14,9 @@ description: >-
   "hz- skills" / "скилы Meta". NOT for writing app code (quest-native), reading
   a capture (quest-perf), or submitting a build (quest-store).
 license: MIT
+compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: 0.2.1
+  version: "0.3.0"
 ---
 
 # The Quest toolchain: one CLI, two interfaces, one channel per agent
@@ -29,6 +30,10 @@ Read `references/research-navigation.md` when planning research, choosing a
 capture/automation path, handling conflicting sources or working without a tool.
 Resolve the executable and inspect that version's help before using this dated
 command map; generated companion instructions may describe a different version.
+
+For a whole-product roadmap or stage audit, use `quest-lifecycle`; a single technical task stays with this owner. If absent, identify the current stage, its evidence and the next prerequisite inline.
+
+Read `references/source-research.md` for current-source discovery, unavailable Markdown, conflicting requirements, versioned API indexes and existing CLI/MCP registrations.
 
 ## Install it once, through one channel
 

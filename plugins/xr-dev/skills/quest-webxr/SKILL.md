@@ -13,8 +13,9 @@ description: >-
   apps (quest-native), native profiling (quest-perf), or an APK submission
   (quest-store).
 license: MIT
+compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: 0.2.1
+  version: "0.3.0"
 ---
 
 # WebXR and PWAs on Horizon OS
@@ -25,6 +26,8 @@ outside a headset — and the wrong one when the frame budget is already tight.
 
 Read `references/runtime-delivery.md` for session/capability negotiation,
 ordinary-screen fallback, assets, hosting and browser/PWA delivery checks.
+
+For a whole-product roadmap or stage audit, use `quest-lifecycle`; a single technical task stays with this owner. If absent, identify the current stage, its evidence and the next prerequisite inline.
 
 ## The order that avoids rework
 

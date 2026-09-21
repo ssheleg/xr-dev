@@ -14,8 +14,9 @@ description: >-
   (quest-native), not for Store performance VRCs as a submission gate
   (quest-store), and not for desktop or mobile-phone profiling.
 license: MIT
+compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: 0.2.1
+  version: "0.3.0"
 ---
 
 # Quest performance: the budget, the lie, and the capture
@@ -24,6 +25,10 @@ Performance work on Horizon OS fails in one of two ways: optimising without a
 capture, or reading the capture wrong. This skill fixes the second first, because
 the most-quoted number on the platform — `GPU%` — is misleading exactly when it
 matters.
+
+For a whole-product roadmap or stage audit, use `quest-lifecycle`; a single technical task stays with this owner. If absent, identify the current stage, its evidence and the next prerequisite inline.
+
+Read `references/mobile-rendering.md` when choosing the render pipeline or investigating tile, render-pass, geometry, overdraw and asset costs.
 
 ## The budget is a deadline, not a target
 

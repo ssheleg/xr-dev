@@ -6,14 +6,14 @@ would be a second source of truth that drifts.
 
 ## What this repo is
 
-Five agent skills for Meta Quest and Horizon OS, separated by **the question
+Seven agent skills for Meta Quest and Horizon OS, separated by **the question
 being answered** rather than by the tool that answers it. A tool skill ages with
 the tool; a question skill ages with the platform, and Horizon OS moves on its
 own cadence.
 
-Meta publishes 29 task skills of its own, twelve of them Unity-specific. **This
-pack never duplicates them.** Where Meta owns the lane — Unity, a specific
-profiler's flags, the Spatial SDK — the body routes there by name.
+Meta publishes task skills of its own. Inspect the current catalog; do not promise
+a specialist that is absent. This pack owns product-stage readiness and platform
+seams, and uses Meta companions for engine/tool-specific work when available.
 
 ## The gate
 

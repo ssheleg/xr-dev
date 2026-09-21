@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.0 — 2026-09-21
+
+- Add quest-lifecycle: a portable product-stage map with proactive next actions, engine selection, immersive-design acceptance and evidence gates.
+- Extend all six existing owners with platform/research/rendering coverage, cooperative hybrid activities, source-conflict handling, commercial readiness, capture and Store asset production, and post-launch analytics.
+- Correct stale descriptions, hard Spatial limits, CPU/GPU timing claims, release manifest guidance and duplicate MCP setup defaults. Keep current SDK/device/Dashboard checks explicit.
+- Add lifecycle evaluation cases and record isolated baseline/candidate planning probes separately from routing, build and headset verification.
+
+
 ## [0.2.1] — 2026-09-20
 
 ### Changed

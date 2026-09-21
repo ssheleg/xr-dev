@@ -14,8 +14,9 @@ description: >-
   a Kotlin Spatial SDK app, not for WebXR or a PWA (quest-webxr), not for
   profiling (quest-perf), not for Store submission (quest-store).
 license: MIT
+compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: 0.2.1
+  version: "0.3.0"
 ---
 
 # Native OpenXR on Horizon OS
@@ -30,6 +31,8 @@ Read `references/project-playbook.md` for project discovery, target/version
 contracts, engine handoff, a vertical slice and an audit. Read
 `references/mixed-reality.md` for feature/permission decisions, tracking/room
 lifecycle, colocation and camera or AI input.
+
+For a whole-product roadmap or stage audit, use `quest-lifecycle`; a single technical task stays with this owner. If absent, identify the current stage, its evidence and the next prerequisite inline.
 
 ## Step 0 — is this project even on this lane?
 
