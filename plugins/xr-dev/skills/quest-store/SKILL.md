@@ -25,6 +25,10 @@ meet the full release packaging requirements.** And **the Production channel is
 the only one that triggers review**; a build sitting there does nothing until
 the submission info is filled in and "Submit for Review" is clicked.
 
+Read `references/production-readiness.md` when planning a release or auditing
+product readiness: artifact identity, manifest conflicts, accounts, purchases,
+saves, social features, privacy, review evidence and recovery after release.
+
 ## The four channels
 
 | Channel | Audience | Review |
@@ -80,8 +84,10 @@ only the second is enforced at review. Before uploading anything:
 - `installLocation="auto"`, unique `android:label`.
 - Immersive: `android.hardware.vr.headtracking` `required="true"`; a 2D panel
   app omits it or sets `required="false"`.
-- OpenXR apps: `org.khronos.openxr.intent.category.IMMERSIVE_HMD` alongside
-  `LAUNCHER` in the intent filter.
+- OpenXR apps: the current Meta release page lists
+  `com.oculus.intent.category.VR` alongside MAIN/LAUNCHER; inspect the merged
+  APK and retain any additional SDK/runtime-required categories deliberately.
+- Release launch activity: `android:excludeFromRecents="true"`.
 - SDK levels: **an app created since 1 March 2026 must target 34**; recommended
   min 32 / target 34 / compile ≥ target for in-lifecycle devices.
 - Sign with **APK signature scheme v2**; keep the keystore out of the repository.
@@ -127,8 +133,8 @@ privacy policy URL live.
   upload alone.
 - **2D panel apps are a different rule set**: a VRC subset, and a list of
   permissions (precise location, telephony, …) that trigger automatic rejection.
-- **Store assets fail more submissions than code does.** Text bleeding into the
-  unsafe top/bottom 20% is the classic.
+- **Store assets have their own checks.** Verify current safe areas and
+  representative captures; do not infer acceptance from a successful APK upload.
 
 *Channel behaviour, review stages, the VRC groups and the SDK-level rule were
 read from developers.meta.com (`resources/publish-release-channels`,

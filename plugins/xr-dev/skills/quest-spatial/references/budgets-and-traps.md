@@ -16,7 +16,7 @@ re-fetch before quoting a number onward.
 
 ## CPU budgets
 
-| Item | Max at 90 FPS |
+| Item | Workload estimate at 90 FPS |
 |---|---|
 | EOPT — entity operations per tick (a read or write to the data model inside a system) | 2,000 |
 | Physics objects (a simple GLB with Physics) | 500 — graphics usually binds first |
@@ -34,10 +34,14 @@ rate temporarily; "stays" is where it no longer recovers:
 | Activity-based | 2 | 2 |
 | Panel with layers | 5 | 15 |
 
-An app may spend its CPU on any linear combination of objects and panels — the
-two tables trade against each other rather than adding up independently.
+These are measured/recommended planning figures, not enforced API maximums.
+Do not add isolated table capacities or assume linear mixing; measure the actual
+panels, media, physics and scene content together.
 
 ## GPU budgets
+
+Retain the source workload assumptions; the following figures are estimates,
+not guaranteed capacities for arbitrary GLBs, shaders or devices.
 
 - Up to **100 GLB objects in view** when they cover more than 50% of the
   viewport; fewer objects if they fill more of it.

@@ -23,6 +23,9 @@ The web path trades native performance for a deploy that is a `git push`. It is
 the right choice for demos, catalogues, tools and anything that must also run
 outside a headset — and the wrong one when the frame budget is already tight.
 
+Read `references/runtime-delivery.md` for session/capability negotiation,
+ordinary-screen fallback, assets, hosting and browser/PWA delivery checks.
+
 ## The order that avoids rework
 
 1. **Build the site and test it in the headset's Browser first.** A packaged PWA

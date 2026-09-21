@@ -10,7 +10,7 @@ description: >-
   "манифест для VR", "openxr_loader_for_android", "xrCreateInstance",
   "xrWaitFrame", "targetSdk for Quest" / "какой targetSdk для Quest",
   "IMMERSIVE_HMD", "hello_xr", "passthrough in native" / "passthrough нативно".
-  NOT for Unity or Unreal projects (Meta's hz-unity-* skills own those), not for
+  NOT for Unity or Unreal engine implementation, not for
   a Kotlin Spatial SDK app, not for WebXR or a PWA (quest-webxr), not for
   profiling (quest-perf), not for Store submission (quest-store).
 license: MIT
@@ -25,6 +25,11 @@ phone-class OS underneath through **Android**. Most of what breaks sits in that
 seam: a manifest that is legal for sideloading and illegal for the Store, a loader
 version that crashes instead of degrading, a frame loop that stops drawing the
 moment focus is lost.
+
+Read `references/project-playbook.md` for project discovery, target/version
+contracts, engine handoff, a vertical slice and an audit. Read
+`references/mixed-reality.md` for feature/permission decisions, tracking/room
+lifecycle, colocation and camera or AI input.
 
 ## Step 0 — is this project even on this lane?
 
@@ -66,9 +71,9 @@ read its result rather than repeating the search.
 
 **Development and release requirements differ, and only the release set is
 enforced at review** (`VRC.Quest.Packaging.1`, `.4`). Writing the dev manifest and
-submitting it is the most common way a first submission fails.
+submitting it without checking the release delta can fail review.
 
-Required for an immersive OpenXR app:
+Current Meta manifest segment for an immersive OpenXR app (rechecked 2026-09-21):
 
 ```xml
 <uses-feature android:name="android.hardware.vr.headtracking"
@@ -77,7 +82,7 @@ Required for an immersive OpenXR app:
 <intent-filter>
   <action   android:name="android.intent.action.MAIN" />
   <category android:name="android.intent.category.LAUNCHER" />
-  <category android:name="org.khronos.openxr.intent.category.IMMERSIVE_HMD" />
+  <category android:name="com.oculus.intent.category.VR" />
 </intent-filter>
 ```
 
@@ -147,10 +152,11 @@ Session states, pacing and the focus rules in detail: `references/frame-loop.md`
 
 ## Step 6 — capabilities, never device models
 
-Check for the extension, not for "is this a Quest Pro". Eye tracking, face
-tracking, depth, microgestures and passthrough all announce themselves through
-extension enumeration; `supportedDevices` plus compatibility mode means the
-model string can lie to you on purpose.
+Check the feature through the chosen SDK/runtime, not just "is this a Quest
+Pro". OpenXR extension enumeration is one layer; system properties, permissions,
+account restrictions and valid tracking state may also be required. Camera2
+capabilities do not reduce to OpenXR extension names. Compatibility mode can
+change the reported model, so device-name checks alone are insufficient.
 
 ## What this skill hands off
 
@@ -165,8 +171,9 @@ model string can lie to you on purpose.
 
 - **The dev manifest passes sideloading and fails review.** Two documents, two
   requirement sets; the release one is `resources/publish-mobile-manifest`.
-- **A missing `IMMERSIVE_HMD` category** produces an app that installs, launches
-  as a flat panel, and looks like a rendering bug.
+- **A wrong launch category** can look like a rendering bug. The current Meta
+  release page names `com.oculus.intent.category.VR`; verify the merged APK
+  against that page and the selected SDK rather than a generic OpenXR snippet.
 - **Loader below 1.0.34 crashes on launch** with no diagnostic pointing at the
   loader.
 - **`hasCode="false"` and the Platform SDK are mutually exclusive** — an

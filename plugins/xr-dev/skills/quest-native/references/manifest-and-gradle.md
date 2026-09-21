@@ -4,9 +4,9 @@
 for a native Quest app, or when a build is rejected for `VRC.Quest.Packaging.1`
 or `.4`.
 
-Source: `documentation/native/android/mobile-native-manifest` (page dated
-2026-09-01) and `resources/publish-mobile-manifest` (2026-08-31), read
-2026-09-20. **Development and release requirements are two different documents.**
+Sources: [native manifest](https://developers.meta.com/horizon/documentation/native/android/mobile-native-manifest/)
+(page dated 2026-09-01) and [release manifest](https://developers.meta.com/horizon/resources/publish-mobile-manifest/)
+(2026-08-31), rechecked 2026-09-21. **Development and release requirements are two different documents.**
 
 ## Contents
 
@@ -32,7 +32,7 @@ Source: `documentation/native/android/mobile-native-manifest` (page dated
       <intent-filter>
         <action   android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
-        <category android:name="org.khronos.openxr.intent.category.IMMERSIVE_HMD" />
+        <category android:name="com.oculus.intent.category.VR" />
       </intent-filter>
     </activity>
   </application>
@@ -53,8 +53,13 @@ Source: `documentation/native/android/mobile-native-manifest` (page dated
 | `installLocation` | `auto` (or `0`); anything else needs store-team approval |
 | `android:label` | the app's name, **unique on the platform** |
 | `android.hardware.vr.headtracking` | `required="true"` for immersive; omitted or `false` for a 2D panel app |
-| intent filter | `MAIN` + `LAUNCHER`; OpenXR adds `IMMERSIVE_HMD` |
+| `android:excludeFromRecents` | `true` in the release launch activity |
+| intent filter | `MAIN` + `LAUNCHER`; current Meta OpenXR release example adds `com.oculus.intent.category.VR` |
 | `com.oculus.supportedDevices` | `quest2\|questpro\|quest3\|quest3s` as a `meta-data` element in `application` |
+
+The snippet is a manifest segment, not a complete generated project. Verify
+merged APK output and preserve additional categories required by the chosen
+SDK/cross-runtime target; the Meta category is not a universal OpenXR spec rule.
 
 Non-conformance fails `VRC.Quest.Packaging.1` and/or `.4` — while still
 installing happily when sideloaded, which is what makes it a late surprise.
