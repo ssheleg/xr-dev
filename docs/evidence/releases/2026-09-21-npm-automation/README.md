@@ -53,3 +53,24 @@ account authentication, then configure trust and execute steps 2–4 above.
   `release.yml`, permissions `createPackage` and `createStagedPackage`.
   Direct publish is enabled; no npm secret is stored in GitHub.
 - Remaining: observe actual 0.3.1 tag-push publication and finish umbrella propagation.
+
+## Completed member delivery
+
+- [PR 2](https://github.com/ssheleg/xr-dev/pull/2) merged; v0.3.1 points to
+  `7515a914ce4aad860b5fd08ce472509d6f7f5bbf`.
+- [Tag-push release run](https://github.com/ssheleg/xr-dev/actions/runs/35605315535)
+  succeeded. The `npm publish` step actually ran, signed GitHub provenance and
+  printed `+ @ssheleg/xr-dev@0.3.1`; the registry-serving check passed.
+- Registry readback returned version 0.3.1 and integrity
+  `sha512-xNnVAdjN8oPpPvEBRIzsgzraTRRa1Tt08SLKV1OPBKwbj1NEzGZgNsJ0kXdMsfJP1Sur86etgfM7B2t0QSusTw==`.
+  [Registry provenance](https://registry.npmjs.org/-/npm/v1/attestations/@ssheleg%2fxr-dev@0.3.1)
+  identifies a SLSA v1 statement.
+- `RELEASE_ENABLED` and `PUBLISH_NPMJS` are true; GitHub repository secret listing
+  is empty. Trust readback permits direct publishing from release.yml.
+- Member resource claims released. Local-only credentials and cache state are not committed.
+
+Remaining work belongs to [family PR 149](https://github.com/ssheleg/sshlg-skills/pull/149):
+release family 1.51.1, verify site/package/installation and finish the central receipt.
+[Central handoff](https://github.com/ssheleg/sshlg-skills/blob/codex/xr-npm-family/docs/evidence/releases/2026-09-21-xr-npm/README.md).
+The next member release requires the normal version bump, merged commit and tag push;
+it no longer requires npm login or a manual publish.
