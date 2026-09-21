@@ -14,8 +14,9 @@ description: >-
   "hz- skills" / "скилы Meta". NOT for writing app code (quest-native), reading
   a capture (quest-perf), or submitting a build (quest-store).
 license: MIT
+compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: 0.2.1
+  version: "0.3.0"
 ---
 
 # The Quest toolchain: one CLI, two interfaces, one channel per agent
@@ -24,6 +25,15 @@ metadata:
 stdio **MCP server** an agent drives on its own. Everything below is available
 through both — the CLI names are given because they are also the fallback when
 no MCP server is configured.
+
+Read `references/research-navigation.md` when planning research, choosing a
+capture/automation path, handling conflicting sources or working without a tool.
+Resolve the executable and inspect that version's help before using this dated
+command map; generated companion instructions may describe a different version.
+
+For a whole-product roadmap or stage audit, use `quest-lifecycle`; a single technical task stays with this owner. If absent, identify the current stage, its evidence and the next prerequisite inline.
+
+Read `references/source-research.md` for current-source discovery, unavailable Markdown, conflicting requirements, versioned API indexes and existing CLI/MCP registrations.
 
 ## Install it once, through one channel
 
@@ -52,15 +62,11 @@ Measured 2026-09-20 in a game repository: 29 skills × 25 directories = **4129
 files, 47 MB**, untracked, uncovered by `.gitignore` — and the next `git add -A`
 committed the lot into the product.
 
-```bash
-metavr mcp install claude-code      # one agent, MCP only, global
-metavr mcp install project          # .mcp.json in THIS directory — shareable, in-repo
-metavr init --cursor --no-auth      # one agent, full setup, no browser step
-```
-
-Before any of them in a git repository: ignore the destinations first
-(`.claude/skills/*`, `skills/`, `.agents/` and the per-agent dotdirectories),
-then run.
+On this estate, inspect the gateway/plugin registration before setup. A new
+standalone metavr stdio server belongs in the gateway; `metavr mcp install`
+examples configure agents directly and are not the default here. If a selected
+host installation is needed, inspect `metavr init --help` and the target paths
+first. Do not ignore project-owned `.agents` or other existing files broadly.
 
 ## The command map
 
@@ -88,18 +94,13 @@ still a machine that cannot run anything.
 
 ## The MCP server, and how it ends up registered twice
 
-`metavr mcp server` is the stdio server. Two ways it reaches an agent:
-
-1. **Meta's plugin** `meta-vr@meta-quest` — ships the MCP server *and* 29 agent
-   skills. A plugin's MCP server has no per-server switch: enabling the plugin
-   enables the server.
-2. **A direct registration** in the agent's own config (global or per project).
-
-Doing both gives one server two registrations and the agent two copies of every
-tool (~37 each, measured on this estate). Pick one: the plugin if the skills are
-wanted too, the direct registration if the native binary must be the one that
-runs. The project-scoped form (`metavr mcp install project` → `.mcp.json`) is
-the one that travels with the repository to another machine.
+`metavr mcp server` is the stdio server. Meta's plugin may own its
+registration; otherwise the operator's configured gateway can expose it.
+Do not register both. On this estate, new standalone stdio/static-token servers
+go through `~/.config/agentgateway/servers.yaml` and the existing generator/migration
+flow; OAuth protected-resource servers stay at the agent. Plugin-managed MCP
+stays with the plugin. A direct `.mcp.json` is appropriate only where the selected
+deployment policy calls for it, not a universal project setup recipe.
 
 `metavr xroperator status` shows whether the XR Operator proxy is installed and
 **federated into metavr's own MCP server** — when it is, a running XR app can be
@@ -126,7 +127,7 @@ a Meta skill drives the tool, use it — and say which one did the work.
 ## No headset on the desk
 
 - `xrsim` (Meta XR Simulator) and `spatialsim` (`metavr ssim`) run app logic on
-  the machine. They prove behaviour and integration.
+  the machine. They check supported simulated behavior and integration.
 - They **cannot** answer a performance question: no real GPU, no thermals, no
   compositor. See `quest-perf`.
 - `metavr device browser <url>` and the Store test accounts

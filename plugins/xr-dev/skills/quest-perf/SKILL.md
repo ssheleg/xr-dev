@@ -14,8 +14,9 @@ description: >-
   (quest-native), not for Store performance VRCs as a submission gate
   (quest-store), and not for desktop or mobile-phone profiling.
 license: MIT
+compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: 0.2.1
+  version: "0.3.0"
 ---
 
 # Quest performance: the budget, the lie, and the capture
@@ -25,6 +26,10 @@ capture, or reading the capture wrong. This skill fixes the second first, becaus
 the most-quoted number on the platform — `GPU%` — is misleading exactly when it
 matters.
 
+For a whole-product roadmap or stage audit, use `quest-lifecycle`; a single technical task stays with this owner. If absent, identify the current stage, its evidence and the next prerequisite inline.
+
+Read `references/mobile-rendering.md` when choosing the render pipeline or investigating tile, render-pass, geometry, overdraw and asset costs.
+
 ## The budget is a deadline, not a target
 
 | Refresh rate | Time per frame |
@@ -33,10 +38,11 @@ matters.
 | 90 Hz | 11.1 ms |
 | 120 Hz | 8.3 ms |
 
-Combined CPU + GPU work must fit before the display refreshes. Miss it and the
-compositor re-displays the previous frame with rotational reprojection
-(TimeWarp): stable under head *rotation*, wrong under head *translation*, so the
-user sees judder and black wedges at the periphery rather than a frozen image.
+CPU, render-thread, GPU and compositor work form a pipeline and can overlap
+across frames. Compare the critical path and synchronization against the
+deadline; do not add independent CPU/GPU samples as a universal frame-time
+formula. Missed submissions may invoke reprojection, with visible artifacts
+that depend on motion, depth and the selected runtime path.
 
 ## The GPU% lie, and the 50% threshold
 
@@ -56,29 +62,31 @@ FPS=36/72  Stale=36  GPU%=0.65  App=18.05ms
 `GPU%` near saturation.** To climb back out of half rate, GPU work must fit one
 refresh interval — i.e. utilisation must fall **below ~50%** while at half rate.
 
-If `App` is inside budget and `Stale` is still non-zero, the bottleneck is on the
-CPU side; go to simpleperf, not to shaders.
+If `App` is inside budget and `Stale` remains non-zero, inspect CPU submission,
+synchronization and compositor timing in a trace. That symptom alone does not
+prove a CPU bottleneck. The worked half-rate example above assumes the stated
+metric definitions and no intentional SpaceWarp mode; verify both first.
 
-## The four levers, in the order they are worth pulling
+## Select a lever from the measured bottleneck
 
-1. **Dynamic Resolution** — the OS lowers render scale when frames drop and
-   restores it later. Enable it early; on Quest 2 and later it is also the
-   prerequisite for the highest GPU levels.
-2. **Fixed Foveated Rendering** — cheap pixels at the periphery; with dynamic
-   foveation the OS can raise the level under pressure.
-3. **Refresh-rate honesty** — request 90 or 120 Hz only if the app sustains it.
-   A steady 72 Hz beats a stuttering 90 Hz, and thermal pressure will throttle
-   the rate back to 72 anyway, changing the budget under a running session.
-4. **Application SpaceWarp** — opt-in, renders at half rate and synthesises the
-   in-between frames from motion vectors plus depth. Up to ~70% more GPU
-   headroom, paid for with motion-vector work and transparency limitations. It
-   is an integration, never an automatic rescue.
+Read `references/rendering-playbook.md` when choosing multiview, render scale,
+foveation, layers, assets, shaders or reprojection. It links each experiment to
+its prerequisites, visual failure cases and target-device evidence.
+
+1. **Dynamic Resolution** — tune render scale through the engine/SDK's supported
+   control path; verify actual behavior rather than assuming the OS enables it.
+2. **Foveation** — distinguish fixed from eye-tracked; test supported levels and
+   quality. A simple shader can cost more with FFR than without it.
+3. **Refresh rate** — request a rate the representative workload sustains; observe
+   actual runtime and thermal behavior rather than promising an automatic rate change.
+4. **Application SpaceWarp** — a supported depth/motion-vector integration with
+   artifact and latency tests, not an automatic rescue or guaranteed percentage gain.
 
 ## Capture chain — what each tool answers
 
 | Question | Tool | How |
 |---|---|---|
-| Am I missing frames at all, and where | logcat VrApi stats (`FPS`, `Stale`, `App`, `GPU%`) | `metavr device logcat` / `adb logcat` |
+| Am I missing frames at all, and where | logcat VrApi stats (`FPS`, `Stale`, `App`, `GPU%`) | `metavr log` / `adb logcat` |
 | Live numbers inside the headset | OVR Metrics Tool (`ovrmetric` APK) | `metavr tools install ovrmetric`, then enable its overlay |
 | CPU vs GPU, thread timeline, stalls | Perfetto | `metavr` MCP `start_perfetto_capture` → `stop_perfetto_capture` → `analyze_trace`, or the CLI equivalents |
 | Which C/C++ functions burn the CPU | simpleperf | Android NDK's simpleperf against the running package |
@@ -94,7 +102,7 @@ capture for a report that another agent can act on.
 ## Method, so a second capture means something
 
 1. Reproduce on a **release build on a real headset**. A simulator run
-   (`xrsim`, `spatialsim`) proves behaviour, never performance.
+   (`xrsim`, `spatialsim`) checks supported simulated behavior, not headset performance.
 2. Note refresh rate and the resulting budget before looking at anything else.
 3. Capture with the app in the *worst* scene, not the menu.
 4. Change **one** thing; re-capture; compare `App` ms, not impressions.
@@ -107,8 +115,9 @@ capture for a report that another agent can act on.
   drift; let it cool or state the temperature state with the number.
 - **Dev-mode overlays and logging cost frames.** Measure with them off, then
   turn them on only to read the numbers you cannot get otherwise.
-- **`Stale` equal to the refresh rate with steady FPS is pipeline latency**, not
-  dropped work — a different problem with a different fix.
+- **Counter semantics depend on capture/runtime mode.** Inspect timestamps and
+  reprojection state before interpreting a stale-frame count as dropped work
+  or pipeline latency.
 - **Draw calls are a CPU cost and fill is a GPU cost.** Cutting draw calls on a
   fill-bound frame moves nothing, which is why the capture comes first.
 - **WebXR has its own counters** — draw-call metrics in the browser docs; see

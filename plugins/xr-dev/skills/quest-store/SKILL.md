@@ -1,21 +1,20 @@
 ---
 name: quest-store
 description: >-
-  Use when getting a Meta Quest build to testers or into the Meta Horizon Store -
-  the four release channels, what review actually checks (VRC technical then
-  content), the release manifest that differs from the development one, Data Use
-  Checkup, signing, uploading with metavr or the Oculus platform utility, store
-  assets, and test accounts. Triggers - "publish to the store" / "выложить в
-  стор", "Horizon Store", "App Lab", "release channel" / "релизный канал",
-  "alpha build for testers" / "альфа для тестеров", "VRC", "app review" /
-  "ревью приложения", "rejected by Meta" / "Meta отклонила", "Data Use Checkup" /
-  "DUC", "upload apk to Quest store" / "загрузить apk в стор", "store assets" /
-  "ассеты для стора", "test user" / "тестовый аккаунт". NOT for building the app
-  (quest-native), profiling it (quest-perf), machine setup (quest-tooling), or a
-  PWA listing (quest-webxr).
+  Use when preparing Meta Quest testing, Meta Horizon Store submission, monetization,
+  launch assets or post-launch commercial operation. Covers release channels,
+  applicable VRCs, signing/manifest, account and data tasks, purchases/subscriptions,
+  pre-launch listings, capture provenance and analytics. Triggers - "publish to
+  the store" / "выложить в стор", "Horizon Store", "App Lab", "release channel" /
+  "релизный канал", "VRC", "app review" / "ревью приложения", "Data Use Checkup",
+  "DUC", "store assets" / "ассеты для стора", "test user" / "тестовый аккаунт",
+  "Quest monetization" / "монетизация Quest", "pre-order" / "предзаказ".
+  NOT for a whole-product roadmap (quest-lifecycle), app implementation,
+  profiling (quest-perf), machine setup (quest-tooling), or PWA packaging (quest-webxr).
 license: MIT
+compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: 0.2.1
+  version: "0.3.0"
 ---
 
 # Shipping to the Meta Horizon Store
@@ -24,6 +23,14 @@ Two facts decide most of the schedule. **Every upload — alpha included — mus
 meet the full release packaging requirements.** And **the Production channel is
 the only one that triggers review**; a build sitting there does nothing until
 the submission info is filled in and "Submit for Review" is clicked.
+
+Read `references/production-readiness.md` when planning a release or auditing
+product readiness: artifact identity, manifest conflicts, accounts, purchases,
+saves, social features, privacy, review evidence and recovery after release.
+
+For a whole-product roadmap or stage audit, use `quest-lifecycle`; a single technical task stays with this owner. If absent, identify the current stage, its evidence and the next prerequisite inline.
+
+Read `references/launch-and-growth.md` for commercial setup, pre-launch decisions, monetization tests, marketing and post-launch operation. Read `references/store-asset-production.md` before capture, listing production or reviewing generated assets.
 
 ## The four channels
 
@@ -46,7 +53,7 @@ review at all** — as long as it is packaged like a release build.
 ## Review, in the order it happens
 
 1. **Technical review** — the Virtual Reality Checks (VRC). A failure comes back
-   as a detailed report naming each missed requirement; resubmission is normal.
+   with review findings; do not assume it enumerates every remaining defect.
 2. **Content review** — completeness, polish and value, after the technical pass.
 3. **Approval** — then a release date can be set, immediately or scheduled.
 
@@ -80,8 +87,10 @@ only the second is enforced at review. Before uploading anything:
 - `installLocation="auto"`, unique `android:label`.
 - Immersive: `android.hardware.vr.headtracking` `required="true"`; a 2D panel
   app omits it or sets `required="false"`.
-- OpenXR apps: `org.khronos.openxr.intent.category.IMMERSIVE_HMD` alongside
-  `LAUNCHER` in the intent filter.
+- OpenXR apps: the current Meta release page lists
+  `com.oculus.intent.category.VR` alongside MAIN/LAUNCHER; inspect the merged
+  APK and retain any additional SDK/runtime-required categories deliberately.
+- Release launch activity: `android:excludeFromRecents="true"`.
 - SDK levels: **an app created since 1 March 2026 must target 34**; recommended
   min 32 / target 34 / compile ≥ target for in-lifecycle devices.
 - Sign with **APK signature scheme v2**; keep the keystore out of the repository.
@@ -127,8 +136,8 @@ privacy policy URL live.
   upload alone.
 - **2D panel apps are a different rule set**: a VRC subset, and a list of
   permissions (precise location, telephony, …) that trigger automatic rejection.
-- **Store assets fail more submissions than code does.** Text bleeding into the
-  unsafe top/bottom 20% is the classic.
+- **Store assets have their own checks.** Verify current safe areas and
+  representative captures; do not infer acceptance from a successful APK upload.
 
 *Channel behaviour, review stages, the VRC groups and the SDK-level rule were
 read from developers.meta.com (`resources/publish-release-channels`,

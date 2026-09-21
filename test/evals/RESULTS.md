@@ -1,21 +1,43 @@
 # Evaluation results
 
-**Status: authored 2026-09-20, never executed.** No model run has been recorded
-against this pack yet. The table below is empty on purpose — CI proves the
-shape of the eval data, not the behaviour of any model, and an unrun eval
-reported as a pass is worse than no eval at all.
+## 2026-09-21: isolated planning probes
 
-| Date | Version | Model | Trigger pass rate (train / validation) | Scenario lines passed | Installed alongside | Notes |
-|---|---|---|---|---|---|---|
-| — | — | — | — | — | — | not yet run |
+[Inputs and output artifacts](../../docs/evidence/verification/2026-09-21-lifecycle/planning-probes.json)
+record three frozen tasks with baseline and candidate arms. Local Claude CLI,
+reported model `claude-opus-5[1m]`; default host model, no override. Tools, slash
+skills and MCP were disabled. Baseline received the task only; candidate received
+explicit xr-dev lifecycle/selected reference text. This measures planning output,
+**not automatic runtime routing or installed-neighbor coexistence**. The measured
+installed catalog was 585 skills, including 29 Meta companions, but those were not
+active in these isolated arms. No claim of real-world task success follows.
 
-## Method, when it is run
+### Rubric review (author judgment, not an independent judge)
 
-1. Fresh session per query, three repetitions, nothing else in the prompt.
-2. Record which skill loaded, not whether the answer sounded right.
-3. Record the full installed set: this pack is designed to coexist with Meta's
-   `meta-vr@meta-quest` (29 skills), and routing is measured **with** it
-   installed, because that is the machine the pack ships onto.
-4. Score scenario lines independently; a scenario is not a single verdict.
-5. Record the model and the pack version in the row, then leave the row alone —
-   a re-run is a new row, never an edit.
+| Probe | Baseline observation | Candidate observation |
+|---|---|---|
+| Paid launch with no account setup and AI footage | Useful stage plan, but invented an 80% gameplay threshold and automatic free-launch fallback; missed pre-launch listing timing | Explicit account/eligibility work, pre-submission listing check, capture evidence, no invented AI percentage or automatic business-model switch |
+| Explicit Meta Spatial cooperative hybrid | Recognized Spatial but blurred exclusivity with immersion and treated finishing activities as broadly unnecessary | Distinguished exclusive/cooperative transitions, persistent state and device-only evidence; concrete state/transition test plan |
+| Soft-200 docs, Spatial alias, duplicate MCP, retired analytics | Correctly questioned sources/duplicates; lacked the actual Spatial index and analytics migration facts | Named versioned Spatial index, HTML/content fallback, gateway/plugin discovery and Funnel migration/attribution distinction |
+
+The initial hybrid prompt did not name Meta explicitly; it was discarded as an
+ambiguous instrument and **both arms were rerun** with Meta Quest/Horizon OS and
+Meta Spatial SDK named. Only corrected inputs/outputs are recorded here.
+
+The first candidate launch probe wrongly suggested premium pricing avoids
+entitlement work. The body/reference were clarified and the candidate was rerun.
+The recorded final output keeps entitlement/purchase checks. Remaining model
+wording still needs engineering judgment: proposed activity topology is not a
+platform requirement, repository discovery duration is an estimate, and final
+merged-APK/device evidence outranks an intermediate build directory. Do not read
+this table as universal model correctness.
+
+## Not executed
+
+- Runtime activation/repeated trigger measurements with the installed neighboring
+  skills. `triggers.json` and `scenarios.json` remain definitions, not pass results.
+- End-to-end engine builds, Quest compositor/input/thermal/comfort testing.
+- Live Dashboard/app submission, purchase/subscription flows and customer outcomes.
+
+The exact next evaluation task is to exercise these cases in a real target project
+and record actual host/tool/device artifacts. Structural validation and planning
+probes permit a documented skill release; they do not certify a VR product.

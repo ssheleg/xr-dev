@@ -1,6 +1,6 @@
 {
   "skill": "xr-dev",
-  "note": "Behavioral trigger cases. Run each in a fresh session; the committed data holds no model results. Baseline failures they were written against are in docs/evidence/specs/xr-dev-0.1.0.md.",
+  "note": "Trigger definitions only; source provenance and executed probe limitations are in test/evals/README.md.",
   "split": {
     "train": [
       "q01",
@@ -11,7 +11,9 @@
       "q06",
       "q12",
       "q15",
-      "q18"
+      "q18",
+      "q19",
+      "q21"
     ],
     "validation": [
       "q07",
@@ -22,7 +24,9 @@
       "q13",
       "q14",
       "q16",
-      "q17"
+      "q17",
+      "q20",
+      "q22"
     ]
   },
   "queries": [
@@ -151,6 +155,34 @@
       "query": "Write a Kotlin Android app for a phone with a RecyclerView",
       "should_trigger": false,
       "why": "plain Android — no headset, no lane in this pack"
+    },
+    {
+      "id": "q19",
+      "lang": "en",
+      "query": "Plan our Quest roadmap from prototype to paid launch and operation",
+      "should_trigger": true,
+      "why": "quest-lifecycle spans product stages"
+    },
+    {
+      "id": "q20",
+      "lang": "ru",
+      "query": "Полный цикл VR: что нам предложить до первого сабмита приложения Oculus?",
+      "should_trigger": true,
+      "why": "quest-lifecycle proactive readiness"
+    },
+    {
+      "id": "q21",
+      "lang": "en",
+      "query": "Set a subscription price for my non-VR web SaaS",
+      "should_trigger": false,
+      "why": "not a Quest product"
+    },
+    {
+      "id": "q22",
+      "lang": "en",
+      "query": "Fix this Unity null reference in one MonoBehaviour",
+      "should_trigger": false,
+      "why": "engine-only implementation stays with the engine specialist"
     }
   ]
 }

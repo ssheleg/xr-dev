@@ -1,108 +1,98 @@
-# xr-dev — Meta Quest and Horizon OS, six skills
+# xr-dev — Meta Quest product lifecycle, seven skills
 
-Agent skills for building, profiling and shipping XR on Meta Quest. They answer
-the questions that sit *above* a tool: which build lane a project is on, which
-number in a capture is the real one, what the Store will reject, and where the
-authoritative answer lives.
+Agent skills for taking Quest games and apps from platform choice to release and
+operation. Each stage names its owner, evidence and next action, so the agent can
+surface account, design, performance and launch work before it becomes a blocker.
 
-Meta publishes [29 task skills of its own](https://github.com/meta-quest/agentic-tools)
-— twelve of them Unity-specific. **This pack does not duplicate them.** It owns
-the native OpenXR lane, the measurement, the toolchain hygiene and the release
-seam, and routes to Meta's skills where they own the tool.
+Part of the [ssheleg harness](https://skills.sshlg.me/harness/). This pack works
+independently and composes with the family delivery, UX and design skills.
 
-## The six skills
+## The seven skills
 
 | Skill | Answers |
 |---|---|
-| `quest-native` | a native OpenXR app in C/C++: the two manifests, the Khronos loader, the frame loop, SDK levels |
-| `quest-spatial` | the Kotlin lane — Meta Spatial SDK: toolchain versions, ECS, the panel budgets that decide a design, and 15 samples mapped to what each one answers |
-| `quest-perf` | the frame budget, why `GPU%` reads low exactly when an app is GPU-bound, and how to capture |
-| `quest-tooling` | the metavr CLI and its MCP server, the managed tools, and one install channel per agent |
-| `quest-store` | the four release channels, the VRC list, the release manifest, uploading |
-| `quest-webxr` | WebXR sessions, IWSDK, Bubblewrap packaging and the asset-links step that decides whether a PWA launches |
+| [quest-lifecycle](plugins/xr-dev/skills/quest-lifecycle/SKILL.md) | What stage is this product at, what is missing, and what should happen next? |
+| [quest-native](plugins/xr-dev/skills/quest-native/SKILL.md) | How is the C/C++ OpenXR project built and audited, including MR capability and lifecycle boundaries? |
+| [quest-spatial](plugins/xr-dev/skills/quest-spatial/SKILL.md) | How do Kotlin Spatial SDK, ECS, panels and hybrid activities fit this app? |
+| [quest-perf](plugins/xr-dev/skills/quest-perf/SKILL.md) | What limits frames, memory or sustained performance, and which rendering experiment tests it? |
+| [quest-tooling](plugins/xr-dev/skills/quest-tooling/SKILL.md) | Which tools and sources are available, current and appropriate for this host? |
+| [quest-store](plugins/xr-dev/skills/quest-store/SKILL.md) | What remains for testing, submission, monetization, Store assets, launch and operation? |
+| [quest-webxr](plugins/xr-dev/skills/quest-webxr/SKILL.md) | How does the browser/PWA experience handle sessions, optional features and delivery? |
 
-Each ships its references, loaded on demand:
+References live inside their owning skill and load on demand. The skill bodies
+link every shipped reference with a use condition. For the complete change and
+verification record, see [lifecycle release evidence](docs/evidence/verification/2026-09-21-lifecycle/README.md).
 
-- `quest-native/references/` — `manifest-and-gradle.md`, `frame-loop.md`, `doc-map.md`
-- `quest-spatial/references/` — `samples-map.md`, `docs-map.md`, `budgets-and-traps.md`
-- `quest-perf/references/capture-playbook.md`
-- `quest-tooling/references/tool-matrix.md`
-- `quest-store/references/vrc-checklist.md` (80 requirements across 14 groups, generated from Meta's page)
-- `quest-webxr/references/pwa-packaging.md`
+## Start with the product stage
 
-## What is inside that is hard to find elsewhere
+For a new or inherited product, invoke `/quest-lifecycle` from a skills directory
+or `/xr-dev:quest-lifecycle` from the plugin. It inspects the actual engine and app
+category, preserves existing project records, and proposes the earliest unresolved
+step. For a single bug, capture or upload, use that specialist directly.
 
-- **The GPU% trap.** At half rate a GPU-bound app reports ~65% utilisation.
-  `App` in milliseconds against the refresh-rate budget is the number that is
-  true; utilisation must fall below ~50% at half rate before full rate returns.
-- **Two manifests, one of them enforced.** Development and release requirements
-  are different documents; only the release set is checked at review.
-- **`targetSdkVersion` 34 since 1 March 2026** for new apps — and a lock file
-  that still says 32 is a release note for a build that does not exist.
-- **`metavr init` with no target flag means every agent it knows**, into the
-  current directory: measured at 29 skills × 25 directories = 4129 files, 47 MB,
-  inside a game repository, committed by the next `git add -A`.
-- **An alpha build is not exempt from packaging requirements**, and the
-  Production channel is the only one that triggers review.
-- **Spatial SDK's budgets are the shape of the design, not tuning advice**:
-  three video panels, two activity-based panels, 2,000 entity operations per
-  tick, ~1,000 scene-graph entities, +480,000 panel pixels ≈ +1% GPU.
-- **AGP 8.5 or earlier under the Gradle 9 wrapper fails during CMake model
-  sync** — the error blames CMake and the fix is AGP 8.11.1.
-- **Every Meta doc page has a Markdown twin** at
-  `developers.meta.com/horizon/llmstxt/<path>.md` — no scraping, no login.
+The workflow covers platform selection, immersive UX, a device-tested vertical
+slice, content/performance budgets, commercial prerequisites, real gameplay
+capture, Store review and post-launch checks. It distinguishes 2D, immersive,
+hybrid, WebXR, packaged PWA and PC VR requirements.
+
+[Meta's own companion skills](https://github.com/meta-quest/agentic-tools) supply
+engine and tool workflows when installed. The lifecycle engine map also points
+to Godot's official XR/export/vendor-plugin documentation. This pack supplies
+fallback procedures; it does not install an engine, promise every device feature,
+or treat a generated image as gameplay evidence.
 
 ## Install
 
-Claude Code (plugin — the channel that updates):
+Claude Code plugin:
 
-```
+```text
 /plugin marketplace add ssheleg/xr-dev
 /plugin install xr-dev@xr-dev
 ```
 
-Any of 70+ agents, through the skills CLI:
+Portable Agent Skills:
 
 ```bash
 npx skills add ssheleg/xr-dev
 ```
 
-Plain copies into `~/.claude/skills/` (only when the plugin is *not* installed —
-a copy shadows it and serves its frozen version forever):
+The standalone npm installer also works when the same Claude plugin is absent:
 
 ```bash
-npx @ssheleg/xr-dev            # --force to overwrite, --help for the exit codes
+npx @ssheleg/xr-dev --help
 ```
 
-Skills load at session start: **restart the agent** after installing.
+Use one channel per agent. For a composing family installation, update through
+`npx sshlg-skills update`. Restart the agent after updates so skills reload.
 
-## Companion tooling
+## Tools and source freshness
 
-The skills assume, and degrade without, the Meta VR CLI:
-
-```bash
-curl -fsSL https://developers.meta.com/horizon/install-cli/ | sh
-metavr auth login && metavr doctor
-```
-
-No `metavr`, no MCP server and no headset still leaves every skill useful: each
-one names the documentation address to fetch by hand and says which steps need
-hardware.
+Inspect existing CLI/MCP/plugin registration before setup. `quest-tooling` maps
+Meta VR CLI, device/debug/profiling tools and Markdown documentation indexes,
+with the operator's gateway policy taking precedence over generic setup examples.
+No MCP uses CLI; no CLI uses official docs; absent engine/device/account access
+leaves dependent checks explicitly unverified. An HTTP 200 may be an unavailable
+page, and a source example is not a universal SDK or Store requirement.
 
 ## Verifying a change
 
 <!-- commands-run-in: a clone -->
-From a clone of this repository — the published package ships the skills, not
-the test suite:
+The repository carries tests; the npm payload carries the skills and references.
 
 ```bash
-npm test               # the house validator: structure, budgets, references, links
-npm run test:negatives # plants each defect and fails if a guard stays green
+npm test
+npm run test:negatives
 node test/installer_test.js
-claude plugin validate . --strict && claude plugin validate plugins/xr-dev --strict
+python3 test/evals_validate.py
+claude plugin validate . --strict
+claude plugin validate plugins/xr-dev --strict
 ```
+
+[Test evaluation documentation](test/evals/README.md) separates scenario definitions,
+isolated model planning probes, runtime routing and device/product evidence.
 
 ## License
 
-MIT. Documentation facts are quoted from Meta's developer documentation with
-the date they were read; re-verify before quoting them onward.
+MIT for this pack. Primary documentation is linked and dated; third-party tools,
+assets and models retain their own licenses. Recheck volatile requirements before
+implementation and submission.

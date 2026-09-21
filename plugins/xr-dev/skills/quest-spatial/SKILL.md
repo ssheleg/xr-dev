@@ -14,8 +14,9 @@ description: >-
   Unity (Meta's hz-unity-* skills), WebXR (quest-webxr), profiling a build
   (quest-perf), or Store submission (quest-store).
 license: MIT
+compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: 0.2.1
+  version: "0.3.0"
 ---
 
 # Meta Spatial SDK: the Android lane onto Horizon OS
@@ -24,6 +25,10 @@ Spatial SDK lets an **Android** team ship an immersive app in Kotlin: Android
 Studio, Gradle, Jetpack Compose, the libraries they already use — with OpenXR
 underneath and an ECS data model on top. A panel in the scene is a real Android
 view, not a texture someone drew to look like one.
+
+For a whole-product roadmap or stage audit, use `quest-lifecycle`; a single technical task stays with this owner. If absent, identify the current stage, its evidence and the next prerequisite inline.
+
+Read `references/hybrid-activities.md` when mixing panel and immersive activities: exclusive/cooperative modes, state ownership and transition tests.
 
 ## Step 0 — is this the right lane?
 
@@ -35,13 +40,16 @@ view, not a texture someone drew to look like one.
 | Ships on the web, or must run outside a headset too | `quest-webxr` |
 | An existing 2D Android app that only needs to run on Quest | Meta's `hz-android-2d-porting` — porting, not rebuilding |
 
-Spatial SDK's own ceiling is the part to decide up front: it is **panel- and
-scene-graph-shaped**. The budgets below are not tuning advice, they are the
-shape of what it can hold.
+Spatial SDK is built around panels and an ECS scene. Use the runtime estimates
+below to choose a representative workload early, not as hard API ceilings.
+Read `references/build-and-audit.md` when implementing or auditing a project;
+it provides the inline procedure when Meta's companion is absent.
 
-## Step 1 — the toolchain, which is strict
+## Step 1 — inspect the actual toolchain
 
-Read from the samples repository on 2026-09-20 (`meta-quest/Meta-Spatial-SDK-Samples`, MIT):
+Sample snapshot read on 2026-09-20 (`meta-quest/Meta-Spatial-SDK-Samples`, MIT).
+Read the consumer wrapper/catalog first; do not upgrade an existing project
+to these values without checking its SDK and build compatibility:
 
 | Piece | Version |
 |---|---|
@@ -67,11 +75,11 @@ functionality, most apps), `-toolkit` (the common components and systems),
 
 ## Step 2 — the budgets, before the architecture
 
-Meta publishes hard numbers (`spatial-sdk-runtime-guidelines`, 2025-10-06).
-They decide designs, so they belong in the first sketch, not in a later
-optimisation pass:
+Meta publishes workload estimates and recommendations
+(`spatial-sdk-runtime-guidelines`, rechecked 2026-09-21). Use them in the first
+sketch, retaining their device/content/refresh assumptions:
 
-| Limit | Number |
+| Measured/recommended item | Snapshot estimate |
 |---|---|
 | Entity operations per tick (a read or write in a system) | **2,000** |
 | Physics objects | **500** |
@@ -79,7 +87,7 @@ optimisation pass:
 | Scene-graph entities | **~1,000** |
 | Panel resolution cost | each extra **480,000 pixels ≈ +1% GPU** |
 
-Panels are the sharpest limit, and they differ by *kind*:
+The panel tables describe isolated test workloads and differ by *kind*:
 
 | Panel type | FPS dips below 90 | FPS stays below 90 |
 |---|---|---|
@@ -91,8 +99,9 @@ Panels are the sharpest limit, and they differ by *kind*:
 | **Activity-based** | **2** | 2 |
 | Panel with layers | 5 | 15 |
 
-Three video panels, or two activity-based ones, is the whole budget. A design
-that opens "a window per item" is a design that will be rewritten.
+These measurements do not establish a hard three-video/two-activity limit or
+guarantee that mixed workloads fit. Test the real panel/media/object mix in a
+release build; consider reuse/virtualization instead of scaling panels with items.
 
 ## Step 3 — the traps that cost a day each
 
@@ -112,11 +121,11 @@ Full text and workarounds: `references/budgets-and-traps.md`.
 - **Layers sharing one `SceneSwapchain` ignore per-layer `setClip()`** — all
   show the last clip set.
 
-## Step 4 — where to read, out of 197 pages
+## Step 4 — where to read
 
 The index is `documentation/spatial-sdk/llms.txt/`, and every page has a
 Markdown twin at `documentation/spatial-sdk/<slug>.md`. The prefix says which
-question a page answers:
+question a page answers. Counts below are the dated source snapshot, not a live inventory:
 
 | Prefix | Count | Holds |
 |---|---|---|
@@ -131,7 +140,8 @@ Slug tables worth keeping open: `references/docs-map.md`.
 
 ## Step 5 — the samples answer faster than the prose
 
-`github.com/meta-quest/Meta-Spatial-SDK-Samples` (MIT, 15 apps). Open the one
+`github.com/meta-quest/Meta-Spatial-SDK-Samples` (MIT). Enumerate its current
+sample directories rather than relying on a prose count. Open the one
 that already does what is being built — `references/samples-map.md` maps each
 sample to the question it answers, and notes that the repository ships its own
 `AGENTS.md`, `.mcp.json` and per-agent configuration, so an agent can be
@@ -150,7 +160,7 @@ interaction models: **exclusive** (one at a time; terminate the old activity
 
 | Next question | Where |
 |---|---|
-| Write the ECS code, panels, gradle wiring | Meta's `hz-spatial-sdk` (ECS, panels, 3D, quick start) — it builds; this skill decides and navigates |
+| Write the ECS code, panels, gradle wiring | Meta's `hz-spatial-sdk` when present; otherwise this skill's build/audit procedure |
 | It runs but drops frames | `quest-perf` |
 | Get it onto a headset, read logs, capture | `quest-tooling` |
 | Ship it | `quest-store` |

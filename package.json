@@ -1,7 +1,7 @@
 {
   "name": "@ssheleg/xr-dev",
-  "version": "0.2.1",
-  "description": "Six skills for Meta Quest and Horizon OS development, split by the question being answered. quest-native owns the native OpenXR lane in C and C++ — the two manifests, the Khronos loader that crashes below 1.0.34, the frame loop review actually checks. quest-spatial owns the Kotlin lane: Meta Spatial SDK's toolchain versions, the ECS model, the panel budgets that decide a design (three video panels, two activity-based ones), and 15 samples mapped to the question each answers. quest-perf owns the frame budget and the GPU% number that reads low exactly when an app is GPU-bound. quest-tooling owns the metavr CLI and its MCP server, the managed tool matrix, and the one-channel-per-agent hygiene that keeps a skill install out of a product repository. quest-store owns the four release channels, the VRC list and the release manifest that differs from the development one. quest-webxr owns the browser lane: WebXR sessions, IWSDK, and Bubblewrap packaging with the asset-links step that decides whether an immersive PWA launches at all.",
+  "version": "0.3.0",
+  "description": "Seven skills for the Meta Quest product lifecycle: platform and engine discovery, immersive design, native OpenXR, Kotlin Spatial and hybrid apps, WebXR/PWA, rendering experiments, tool and source discovery, Store submission, monetization, launch assets and post-launch operation. Agents receive stage-specific next actions, evidence gates and fallbacks when tools or devices are absent. Engine specialists remain separate; live requirements are verified against current Meta documentation.",
   "bin": {
     "xr-dev": "bin/xr-dev.js"
   },

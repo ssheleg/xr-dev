@@ -1,0 +1,331 @@
+[
+  {
+    "url": "https://developers.meta.com/horizon/design/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/design/",
+    "bytes": 1082447,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/design/accessibility/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/design/accessibility/",
+    "bytes": 862806,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/design/comfort/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/design/comfort/",
+    "bytes": 699545,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/design/design-graphic-rendering-pipeline/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/design/design-graphic-rendering-pipeline/",
+    "bytes": 804611,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/design/display/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/design/display/",
+    "bytes": 782838,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/design/mr-design-guideline/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/design/mr-design-guideline/",
+    "bytes": 782245,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/design/mr-design-scene/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/design/mr-design-scene/",
+    "bytes": 713241,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/design/mr-overview/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/design/mr-overview/",
+    "bytes": 711080,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/distribute/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/distribute/",
+    "bytes": 742135,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/documentation/spatial-sdk/hybrid-apps-overview/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/documentation/spatial-sdk/hybrid-apps-overview/",
+    "bytes": 701543,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/documentation/unity/gpu-impaired-algorithms/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/documentation/unity/gpu-impaired-algorithms/",
+    "bytes": 684441,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/documentation/unity/gpu-improved-algorithms/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/documentation/unity/gpu-improved-algorithms/",
+    "bytes": 690084,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/documentation/unity/gpu-tiled/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/documentation/unity/gpu-tiled/",
+    "bytes": 688103,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/essentials/ai-prompting-best-practices/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/essentials/ai-prompting-best-practices/",
+    "bytes": 680816,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/essentials/ai-solutions/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/essentials/ai-solutions/",
+    "bytes": 647477,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/essentials/ai-tooling-overview/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/essentials/ai-tooling-overview/",
+    "bytes": 614561,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/essentials/metavr-install/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/essentials/metavr-install/",
+    "bytes": 712597,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/essentials/metavr-other-tools/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/essentials/metavr-other-tools/",
+    "bytes": 648652,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/llmstxt/documentation/android-apps/llms.txt/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/llmstxt/documentation/android-apps/llms.txt/",
+    "bytes": 27264,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/llmstxt/documentation/native/llms.txt/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/llmstxt/documentation/native/llms.txt/",
+    "bytes": 95372,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/llmstxt/documentation/spatial-sdk/llms.txt/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/llmstxt/documentation/spatial-sdk/llms.txt/",
+    "bytes": 48630,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/llmstxt/documentation/unity/llms.txt/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/llmstxt/documentation/unity/llms.txt/",
+    "bytes": 192031,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/llmstxt/documentation/unreal/llms.txt/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/llmstxt/documentation/unreal/llms.txt/",
+    "bytes": 137966,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/llmstxt/documentation/web/llms.txt/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/llmstxt/documentation/web/llms.txt/",
+    "bytes": 13956,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/ab-testing-instructions/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/ab-testing-instructions/",
+    "bytes": 682947,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/add-ons-integration/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/add-ons-integration/",
+    "bytes": 711340,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/asset-guidelines/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/asset-guidelines/",
+    "bytes": 843598,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/developer-learning-path/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/developer-learning-path/",
+    "bytes": 788116,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/gtm-marketing-assets/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/gtm-marketing-assets/",
+    "bytes": 757965,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/gtm-marketing-plan/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/gtm-marketing-plan/",
+    "bytes": 741227,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/launch-your-app/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/launch-your-app/",
+    "bytes": 734924,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/market-your-app/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/market-your-app/",
+    "bytes": 689408,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/monetization/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/monetization/",
+    "bytes": 732697,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/pre-launch-listings/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/pre-launch-listings/",
+    "bytes": 716734,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/publish-account-management-bank-tax/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/publish-account-management-bank-tax/",
+    "bytes": 677343,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/publish-app-review/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/publish-app-review/",
+    "bytes": 676674,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/publish-data-protection-assessment/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/publish-data-protection-assessment/",
+    "bytes": 745862,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/publish-funnel-analytics/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/publish-funnel-analytics/",
+    "bytes": 706984,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/publish-marketing-analytics/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/publish-marketing-analytics/",
+    "bytes": 682780,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/publish-organization-verification/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/publish-organization-verification/",
+    "bytes": 675635,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/publish-submit/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/publish-submit/",
+    "bytes": 734927,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/store-marketing-materials/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/store-marketing-materials/",
+    "bytes": 745816,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://developers.meta.com/horizon/resources/test-subscriptions/",
+    "status": 200,
+    "resolved_url": "https://developers.meta.com/horizon/resources/test-subscriptions/",
+    "bytes": 687014,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html",
+    "status": 200,
+    "resolved_url": "https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html",
+    "bytes": 1368516,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://docs.godotengine.org/en/stable/tutorials/xr/index.html",
+    "status": 200,
+    "resolved_url": "https://docs.godotengine.org/en/stable/tutorials/xr/index.html",
+    "bytes": 1356378,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://github.com/GodotVR/godot_openxr_vendors",
+    "status": 200,
+    "resolved_url": "https://github.com/GodotVR/godot_openxr_vendors",
+    "bytes": 308213,
+    "content_unavailable": false
+  },
+  {
+    "url": "https://github.com/meta-quest/agentic-tools",
+    "status": 200,
+    "resolved_url": "https://github.com/meta-quest/agentic-tools",
+    "bytes": 385740,
+    "content_unavailable": false
+  }
+]
