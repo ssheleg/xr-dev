@@ -41,3 +41,15 @@ agent/model; no independent agent delegation or scheduled work is required.
 Preparation: worktree based on 6a5053253f45916937bde0972e5cae4bcee57007;
 no release-automation change implemented yet. Exact next task: complete bootstrap
 account authentication, then configure trust and execute steps 2–4 above.
+
+## Implementation checks
+
+- Local gates passed: `npm test` (11 checks, 7 skills, 25 references),
+  `npm run test:negatives` (8 planted defects caught), `node test/installer_test.js`
+  (11 cases; all temporary homes removed), both strict Claude plugin validators.
+- Initial publication printed `+ @ssheleg/xr-dev@0.3.0`; exact registry serving
+  remains a separate propagation check, still 404 at 13:21 UTC.
+- `npm trust list @ssheleg/xr-dev --json` returned GitHub `ssheleg/xr-dev`,
+  `release.yml`, permissions `createPackage` and `createStagedPackage`.
+  Direct publish is enabled; no npm secret is stored in GitHub.
+- Remaining: observe actual 0.3.1 tag-push publication and finish umbrella propagation.

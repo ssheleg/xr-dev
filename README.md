@@ -91,6 +91,13 @@ claude plugin validate plugins/xr-dev --strict
 [Test evaluation documentation](test/evals/README.md) separates scenario definitions,
 isolated model planning probes, runtime routing and device/product evidence.
 
+## Releases
+
+Push a `vX.Y.Z` tag after its versioned commit reaches the default branch. GitHub
+Actions validates the pack, creates the GitHub release and publishes to npm with
+provenance through trusted publishing. Ordinary branch pushes run checks only.
+See [release setup and recovery](docs/RELEASING.md).
+
 ## License
 
 MIT for this pack. Primary documentation is linked and dated; third-party tools,
