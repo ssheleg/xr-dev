@@ -10,12 +10,13 @@ description: >-
   / "PWA для Quest", "bubblewrap", "web app manifest for the headset",
   "browser on Quest" / "браузер в шлеме", "remote debug the headset browser" /
   "отладить браузер шлема", "web IAP" / "покупки в вебе". NOT for native OpenXR
-  apps (quest-native), native profiling (quest-perf), or an APK submission
-  (quest-store).
+  apps (quest-native), native profiling (quest-perf), an APK submission
+  (quest-store), or three.js scene, asset and animation depth off the headset
+  (web3d-dev).
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.3.1"
+  version: "0.3.2"
 ---
 
 # WebXR and PWAs on Horizon OS

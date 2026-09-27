@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.2 — 2026-09-27
+
+- `quest-webxr` names its new neighbour: three.js scene, asset and animation depth off the
+  headset belongs to `web3d-dev` (renderer and TSL, the glTF pipeline, the animation
+  protocol). The Quest session, frame budget and packaging stay here. Description 779 → 850
+  of 970 characters.
+- `SKILL-CARD.md` stated version `0.1.0` through three releases; it now matches.
+
 ## 0.3.1 — 2026-09-21
 
 - Make GitHub OIDC the explicit npm publishing path, without a stored npm token.
