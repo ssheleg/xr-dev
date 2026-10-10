@@ -16,7 +16,7 @@ description: >-
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
 ---
 
 # The Quest toolchain: one CLI, two interfaces, one channel per agent

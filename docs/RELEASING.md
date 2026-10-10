@@ -3,8 +3,8 @@
 ## Automatic path
 
 [release.yml](../.github/workflows/release.yml) runs on a pushed `v*` tag or a
-manual dispatch naming an existing tag. It calls the validation workflow, checks
-that the tag is reachable from the actual default branch, checks manifest versions,
+manual dispatch naming an existing tag. It calls the validation workflow, refuses a
+lightweight tag (`git cat-file -t` must print `tag`), checks that the tag is reachable from the actual default branch, checks manifest versions,
 creates/refreshes the GitHub release, installs the GitHub package in a clean home,
 and publishes the npm package with provenance. GitHub OIDC authenticates publishing;
 there is no `NPM_TOKEN` dependency. Node 24 and current npm run on GitHub-hosted Ubuntu.
