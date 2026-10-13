@@ -5,8 +5,8 @@
 | Field | Value |
 |---|---|
 | Pack | `xr-dev` |
-| Version | `0.3.3` |
-| Skills | `quest-native`, `quest-perf`, `quest-tooling`, `quest-store`, `quest-webxr` |
+| Version | `0.3.4` |
+| Skills | `quest-lifecycle`, `quest-native`, `quest-spatial`, `quest-perf`, `quest-tooling`, `quest-store`, `quest-webxr` |
 | License | MIT |
 | Source | https://github.com/ssheleg/xr-dev |
 

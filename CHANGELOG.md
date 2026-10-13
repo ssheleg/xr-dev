@@ -4,6 +4,17 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.4 — 2026-10-13
+
+- Validate the owner board's table shape, unique task IDs and immediate Markdown
+  separator before accepting a change.
+- Validate the release job's full-history checkout and refusing ancestry check;
+  reject unsupported or ambiguous workflow shapes. Forty-two process controls
+  cover hostile edits and valid board/workflow forms.
+- Run complete hosted validation nightly at 23:00 Europe/Warsaw or once for an
+  explicitly frozen draft-to-ready candidate. Tag releases retain their existing
+  validation and publication checks.
+
 ## 0.3.3 — 2026-10-10
 
 - **The release refuses a lightweight tag.** `release.yml` gains one step, right after
