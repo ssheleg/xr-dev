@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "source": "712a221f479189b59c786fbd0379886001f87351",
+  "commands": [
+    {
+      "argv": [
+        "npm",
+        "test"
+      ],
+      "started_utc": "2026-10-13T11:36:22.287429+00:00",
+      "log": "/tmp/fw00-xr-dev-gate-0.log",
+      "owned_scratch": "/tmp/fresh-fw00-xr-dev-6663e2fbca8c41e88ecb65c652a0e090",
+      "admitted_free_bytes": 620285952,
+      "owned_pid": 14662,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 620273664,
+      "elapsed_seconds": 1.008,
+      "log_sha256": "23bfe1dbbc62a28bd97a83af71c5f9b29f64de60cba40d785052c94e2847f1f4",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [
+        "node-compile-cache"
+      ],
+      "scratch_removed": true,
+      "owned_cleanup": {
+        "proof": "Fresh empty UUID directory created and recorded before this exact child process; terminal PASS; only node-compile-cache descendants remained; all same uid, no symlinks.",
+        "files": 95,
+        "bytes": 308788
+      }
+    },
+    {
+      "argv": [
+        "npm",
+        "run",
+        "test:negatives"
+      ],
+      "started_utc": "2026-10-13T11:36:23.326541+00:00",
+      "log": "/tmp/fw00-xr-dev-gate-1.log",
+      "owned_scratch": "/tmp/fresh-fw00-xr-dev-217fc7fdf7e942e2bd259546f484d56a",
+      "admitted_free_bytes": 619528192,
+      "owned_pid": 14708,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 618278912,
+      "elapsed_seconds": 7.036,
+      "log_sha256": "73cc971c390b9f073b593380e6f348674102f4b4528c62ccaa442ef7cd9f82f8",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [
+        "node-compile-cache"
+      ],
+      "scratch_removed": true,
+      "owned_cleanup": {
+        "proof": "Fresh empty UUID directory created and recorded before this exact child process; terminal PASS; only node-compile-cache descendants remained; all same uid, no symlinks.",
+        "files": 93,
+        "bytes": 305532
+      }
+    },
+    {
+      "argv": [
+        "node",
+        "test/installer_test.js"
+      ],
+      "started_utc": "2026-10-13T11:36:30.390875+00:00",
+      "log": "/tmp/fw00-xr-dev-gate-2.log",
+      "owned_scratch": "/tmp/fresh-fw00-xr-dev-7608a8a0e4124e69ba8d0466920b79c7",
+      "admitted_free_bytes": 617885696,
+      "owned_pid": 15517,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 615170048,
+      "elapsed_seconds": 2.017,
+      "log_sha256": "23b540f309afe29a13484f11f1fe269ae71a744bfe62a0088d9559007cad480a",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [],
+      "scratch_removed": true
+    },
+    {
+      "argv": [
+        "bash",
+        "-n",
+        "install.sh"
+      ],
+      "started_utc": "2026-10-13T11:36:32.438313+00:00",
+      "log": "/tmp/fw00-xr-dev-gate-3.log",
+      "owned_scratch": "/tmp/fresh-fw00-xr-dev-5c1a84ad184b41fe83f95b75ff3d640e",
+      "admitted_free_bytes": 616902656,
+      "owned_pid": 16304,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 616894464,
+      "elapsed_seconds": 1.01,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [],
+      "scratch_removed": true
+    },
+    {
+      "argv": [
+        "claude",
+        "plugin",
+        "validate",
+        ".",
+        "--strict"
+      ],
+      "started_utc": "2026-10-13T11:36:33.483693+00:00",
+      "log": "/tmp/fw00-xr-dev-gate-4.log",
+      "owned_scratch": "/tmp/fresh-fw00-xr-dev-bce67634443c4ebf841f94a306f205f9",
+      "admitted_free_bytes": 618725376,
+      "owned_pid": 16388,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 618713088,
+      "elapsed_seconds": 1.013,
+      "log_sha256": "84dddc1f8f514237157ae9f6c1b72b63a4c9515a5eeb085afddfbf9d70942ef5",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [],
+      "scratch_removed": true
+    },
+    {
+      "argv": [
+        "claude",
+        "plugin",
+        "validate",
+        "plugins/xr-dev",
+        "--strict"
+      ],
+      "started_utc": "2026-10-13T11:36:34.526225+00:00",
+      "log": "/tmp/fw00-xr-dev-gate-5.log",
+      "owned_scratch": "/tmp/fresh-fw00-xr-dev-5be0ddbd87aa4cf99f0d0f3897f02cae",
+      "admitted_free_bytes": 618524672,
+      "owned_pid": 16452,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 618512384,
+      "elapsed_seconds": 1.004,
+      "log_sha256": "fd3709238b551591209d39d3c99c22d4a5f001b4669c8f257890207d5a79972c",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [],
+      "scratch_removed": true
+    }
+  ],
+  "all_exit_zero": true,
+  "source_unchanged": true,
+  "worktree_clean_at_checks": true,
+  "admission_bytes": 419430400,
+  "stop_bytes": 209715200,
+  "independent_peer": "https://github.com/ssheleg/sshlg-skills/blob/a155725e46a0f11ddc4073fb9e337916c0194181/docs/evidence/completion-1013/fw00-navigation-peer.json",
+  "logs": "owner-gate-logs.json.gz",
+  "limits": "Local owner gates and pointer navigation only. No native/model acceptance, version change, publication or installed update. Later receipt-only successor still needs final structural/link/package checks and genuine candidate CI."
+}
