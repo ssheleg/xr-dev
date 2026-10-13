@@ -60,8 +60,8 @@ Skills: task-pipeline (delivery), evidence-docs (source limits), agent-sync
 output and exit 0, local link resolution and package parity. All 39
 files from the existing published receipt match both SHA256 and size; the npm
 `pack --dry-run --json --ignore-scripts` path set is identical. No tarball was
-published or downloaded during this change. The owner structural disclosure for
-an absent enclosing umbrella remains separate from native/model acceptance.
+published or downloaded during this change. The structural output is retained verbatim; no native/device/model
+result follows from this command.
 
 [Hub reader replay](hub-reader.json) records four cases using the actual extracted
 hub function: absent entry discloses the baseline gap; the new current heading
