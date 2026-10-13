@@ -29,8 +29,9 @@ Hub pins and global installation belong to the coordinating hub wave.
 
 ## Current state and next task
 
-Plan committed before the metadata change. PR admission, tag creation, publication and installation remain pending.
-Next: freeze this receipt, push, then promote the reviewed draft once. No model/provider/native-runtime acceptance is inferred.
+Published and byte-verified; see [the final receipt](#published-readback).
+Next: coordinator reconciles family pins and global installation separately.
+No model/provider/native-runtime acceptance is inferred.
 
 Skills used: make-skill (release construction), task-pipeline (delivery),
 agent-sync (local advisory ownership), evidence-docs (source and check receipts).
@@ -53,3 +54,30 @@ no-per-push CI policy until local checks finish.
 `npm test`: 12 structural checks, seven skills and 25 references pass. `npm run test:negatives`: eight owner plants plus 42 member process controls pass. Installer: 11 cases pass. Both strict Claude manifests pass. `git diff --check` passes.
 All test and strict-validation commands exited 0.
 Local checks do not imply native/model or family-install acceptance.
+
+
+## Published readback
+
+The new annotated `v0.3.4` resolves to merged source
+`4bd9e978ca6f73b73e91f26cd58b67323383c5f4`. [Release run 38340370423](https://github.com/ssheleg/xr-dev/actions/runs/38340370423)
+completed successfully on that exact tag/source, and the [GitHub release](https://github.com/ssheleg/xr-dev/releases/tag/v0.3.4)
+and exact npm package `@ssheleg/xr-dev@0.3.4` were observed.
+No historical tag was changed.
+
+The [owner machine receipt](published-readback.json) records registry integrity,
+tarball SHA-256 and every packaged file's hash/size. All 39 files matched
+tagged source byte-for-byte. Isolated `npm exec --yes --package=@ssheleg/xr-dev@0.3.4 -- xr-dev --help`
+exited 0 without installing skills. The later repository-only header successor
+`d36912f4a69be90b920ff7c15a890c805761b35c` also matched every published payload byte.
+
+This follow-up closes GATE-01 and GATE-02's source/publication scope from observed
+evidence. It changes documentation only, preserves package version and payload,
+and does not claim installation, native agent use or older releases were tested.
+Exact next task: coordinator consumes these final board states and publication
+receipts in its family-pin/install wave.
+
+Documentation reconciliation checks: `python3 test/validate.py` and
+`git diff --check` exited 0. `npm pack --dry-run --json` exited 0; all
+39 payload paths and SHA-256 hashes still matched the published receipt.
+No implementation or test code changed, so the prior implementation gates remain
+the source evidence; eligible PR validation will apply to this frozen successor.

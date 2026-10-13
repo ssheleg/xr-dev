@@ -1,0 +1,251 @@
+{
+  "schema": "member-owner-published-readback/1",
+  "sourceReceipt": "https://github.com/ssheleg/sshlg-skills/blob/d798f3812d7b77288154502f757ab24248f3ee53/docs/evidence/completion-1013/member-release-readback.json",
+  "receipt": {
+    "repo": "xr-dev",
+    "version": "0.3.4",
+    "tag": "v0.3.4",
+    "source": "4bd9e978ca6f73b73e91f26cd58b67323383c5f4",
+    "tagReadback": "61bebc0fb55610f2bb12b460229f7dcdadbed523\trefs/tags/v0.3.4\n4bd9e978ca6f73b73e91f26cd58b67323383c5f4\trefs/tags/v0.3.4^{}",
+    "run": {
+      "conclusion": "success",
+      "databaseId": 38340370423,
+      "event": "push",
+      "headBranch": "v0.3.4",
+      "headSha": "4bd9e978ca6f73b73e91f26cd58b67323383c5f4",
+      "status": "completed",
+      "url": "https://github.com/ssheleg/xr-dev/actions/runs/38340370423"
+    },
+    "githubRelease": {
+      "isDraft": false,
+      "isPrerelease": false,
+      "tagName": "v0.3.4",
+      "targetCommitish": "main",
+      "url": "https://github.com/ssheleg/xr-dev/releases/tag/v0.3.4"
+    },
+    "registryVersion": "0.3.4",
+    "registryIntegrity": "sha512-MPGXmJQWve0Qlq/P7Wc9w0b4BakhJJ8IK8n8cfb/dV71CwwbkZOJu2Yegfse/qYGz/CDis9sgxbK09+o+LBOTA==",
+    "tarballSha256": "6453ca7a51d1ded05fc6af5e503e1fda82d34216edbc405c71de18d608ab2d16",
+    "allPackagedFilesByteEqual": true,
+    "fileCount": 39,
+    "files": [
+      {
+        "path": "CHANGELOG.md",
+        "sha256": "ab8568e92602cb985761bc596962226de32ebdd5c7ccfaea9a6d193e706c44e3",
+        "bytes": 8462
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "826df230e15df9b208c1e08c42ef3b764b21c4abec5a91a38976748e92a82e9d",
+        "bytes": 1064
+      },
+      {
+        "path": "README.md",
+        "sha256": "05d2533c809712f92013df7437d9609d1fd2ef5291bf36a2b2fa6019cffe7352",
+        "bytes": 4827
+      },
+      {
+        "path": "SECURITY.md",
+        "sha256": "bab080c9ba3eaa63a60cef27a9cd705fda70cd64c6fdfc8d94ea9b29ff83f663",
+        "bytes": 1737
+      },
+      {
+        "path": "bin/xr-dev.js",
+        "sha256": "de4885eca128479e015c0f1bbda04a937273a7101e411430504d514a99598f51",
+        "bytes": 6958
+      },
+      {
+        "path": "package.json",
+        "sha256": "3257b406e0774b5237edfdf726c73dcc660a06b3c2f7895f4f905925f1b176f1",
+        "bytes": 1517
+      },
+      {
+        "path": "plugins/xr-dev/.claude-plugin/plugin.json",
+        "sha256": "4a4185a94da48e594f85aa5a56f614252eeae6292cd58bbb07189064662ad710",
+        "bytes": 1200
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-lifecycle/SKILL.md",
+        "sha256": "9c301b9d92a28f5b69e7311374c5a0175c9267d22455d7e8bf630f5e2f5a4001",
+        "bytes": 6381
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-lifecycle/references/engine-paths.md",
+        "sha256": "c5e84f1e44c2e9bb10a9e1071febd397ddc15822d9c379e4205f4d0ee1ebf466",
+        "bytes": 4016
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-lifecycle/references/immersive-design.md",
+        "sha256": "4d316198b028a4d0ed935f91e88d7de7ad08c9dd3e4accbf56a5bd81be107536",
+        "bytes": 3801
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-lifecycle/references/stage-map.md",
+        "sha256": "2b4ad8ff2a7c694b91d6d0a8f4df483881e89973c2d8d9207de0eeb25a7047c7",
+        "bytes": 5360
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-native/SKILL.md",
+        "sha256": "fb389448b23327b9b2ce041bbdaf7e3b0820117e1b1eedc4069fac054c92c05d",
+        "bytes": 9885
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-native/references/doc-map.md",
+        "sha256": "4517f06dc473b6f09fe2e9d678cc08e1cd7969e92b4ac61da76103afc84af41e",
+        "bytes": 3778
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-native/references/frame-loop.md",
+        "sha256": "97650d19d7e3c8647ea03ed53f1721d6bca1771eb7e556a4a3a63825945955a6",
+        "bytes": 3942
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-native/references/manifest-and-gradle.md",
+        "sha256": "2fb6a25e519c1f0c455fcf14ea234919d8ab67a14b4bfdb7d44e9ad2c5849a83",
+        "bytes": 4967
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-native/references/mixed-reality.md",
+        "sha256": "5f1f26510b3465d1aa70f28343e4aa24f18a506285d2eb10066593d797cf46ed",
+        "bytes": 6684
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-native/references/project-playbook.md",
+        "sha256": "fc7cb8d200466b81fd628aa6ef7e5a1b73c6488fa0f9b11adeda2e51f59e6ffa",
+        "bytes": 6255
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-perf/SKILL.md",
+        "sha256": "4241b43a89fd211bcfceaf5d7fc9c33dd33175806b4c13da9650aa97cf94d228",
+        "bytes": 7268
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-perf/references/capture-playbook.md",
+        "sha256": "ff475d3f9531e72423f5d1add2ef745afba03e46034d08cef5da89dfe47781a7",
+        "bytes": 3939
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-perf/references/mobile-rendering.md",
+        "sha256": "c5658dd596c80cbdc6e0704acb2b91a0a57a193bb6daba1dc76a51025a3a13d9",
+        "bytes": 3617
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-perf/references/rendering-playbook.md",
+        "sha256": "a809e8e79db2b5ca5efbd0d8c2f3030014b532acc0ee94822f9a00aab203426c",
+        "bytes": 6217
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-spatial/SKILL.md",
+        "sha256": "8ccaa55bbf6a44b97eb3e9ddfe985386d8517bc1e9c4cbc6ee8a34acbd2a508f",
+        "bytes": 9051
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-spatial/references/budgets-and-traps.md",
+        "sha256": "663561f5e4d1439f367d65024f4022d5dc647de94ecafd37e54d3477b0c50a72",
+        "bytes": 3556
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-spatial/references/build-and-audit.md",
+        "sha256": "d3ff8afc1d538811d65d1a785d639c71a1e7e8049b697f1ba22e14fe2232fb06",
+        "bytes": 4424
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-spatial/references/docs-map.md",
+        "sha256": "f5afdec47acc1296c6ee0cd4c22fa88cd34da34dbadd409bcadaaf94dd979ab3",
+        "bytes": 3957
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-spatial/references/hybrid-activities.md",
+        "sha256": "2bf6b7fb2e25eae7ca3343396df8e5c1f0b1cfeee4508c66a1f22532c957a6a9",
+        "bytes": 2159
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-spatial/references/samples-map.md",
+        "sha256": "b05ecd465c9d6084be3c8aa69c467ca206404f428e327487adb8e132016d58cc",
+        "bytes": 3009
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-store/SKILL.md",
+        "sha256": "7b9bc1431494096eee4dc13375ab6a3169c6901aa251708ddf37ad13f5a096d2",
+        "bytes": 8514
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-store/references/launch-and-growth.md",
+        "sha256": "f4ebfc27503ab1e937c06b37f97447a3d23964803b62f9f96373fc0ebc9dc2de",
+        "bytes": 6156
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-store/references/production-readiness.md",
+        "sha256": "1870d3bda4e5d7b22d1b4e86a4b69b47fb2100f35434507266262391cb93fa78",
+        "bytes": 7728
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-store/references/store-asset-production.md",
+        "sha256": "c0fc0646eb193c155a2c01ce3aaf0954642fb10920d2457673cf1058b8c78227",
+        "bytes": 3225
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-store/references/vrc-checklist.md",
+        "sha256": "61e01edfaa27d640925dad900e657b9903d7e77a686b6e9245dd683cd3aea64a",
+        "bytes": 13196
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-tooling/SKILL.md",
+        "sha256": "df336da5fcaf44df6da95672608b484b28e4818660d15cdc564a3f29779fd48d",
+        "bytes": 8769
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-tooling/references/research-navigation.md",
+        "sha256": "36d911874b70f478ebae07845179494fc3cde46c1134630e89990b99ca515c59",
+        "bytes": 5556
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-tooling/references/source-research.md",
+        "sha256": "925c95f08ae4014f1909b05e7d15725b6a90d49f59f3f6f94ebb251c6ecec4ca",
+        "bytes": 3759
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-tooling/references/tool-matrix.md",
+        "sha256": "c43fa700e4d19ccade515f3fd5e734f6f00aeaa5853889672130e5ccbb6b8493",
+        "bytes": 2812
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-webxr/SKILL.md",
+        "sha256": "548528ce4cf3413a5f321027165213078ac5f84474e9e0bef10cd1aa8592c3d1",
+        "bytes": 6668
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-webxr/references/pwa-packaging.md",
+        "sha256": "2d032948002a96e131a6eb08a082eb90cd150d2262bb2aa7e9085b48b069a735",
+        "bytes": 3455
+      },
+      {
+        "path": "plugins/xr-dev/skills/quest-webxr/references/runtime-delivery.md",
+        "sha256": "a1bae86f238a0c03296db7a8dcbeca82450e16966615c03c3b96e4b00ec943e0",
+        "bytes": 3586
+      }
+    ],
+    "nonRepoNpmHelp": {
+      "exit": 0,
+      "isolatedHome": true,
+      "installedSkills": false
+    },
+    "acceptance": "published payload equals tagged source; help works; not native installed-hook or model-quality acceptance",
+    "repositoryOnlySuccessor": {
+      "source": "d36912f4a69be90b920ff7c15a890c805761b35c",
+      "candidate": "7361419caeceec296dd29f42a37e10c4948d71df",
+      "pr": "https://github.com/ssheleg/xr-dev/pull/7",
+      "eligibleRun": {
+        "conclusion": "success",
+        "databaseId": 38344016163,
+        "event": "pull_request",
+        "headSha": "7361419caeceec296dd29f42a37e10c4948d71df",
+        "status": "completed",
+        "url": "https://github.com/ssheleg/xr-dev/actions/runs/38344016163"
+      },
+      "reviewedTreeEqualsMerged": true,
+      "publishedPayloadByteEqual": true,
+      "reason": "test comments and own evidence only; published version/tag unchanged"
+    }
+  }
+}
