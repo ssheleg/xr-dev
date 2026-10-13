@@ -29,10 +29,27 @@ Hub pins and global installation belong to the coordinating hub wave.
 
 ## Current state and next task
 
-Plan committed before the metadata change. Local release-candidate checks, PR
-admission, tag creation, publication and installation are **NOT_RUN** here.
-Next: synchronize version metadata, then perform step 2 after the current FW04
-full gate finishes. No model/provider/native-runtime acceptance is inferred.
+Plan committed before the metadata change. PR admission, tag creation, publication and installation remain pending.
+Next: freeze this receipt, push, then promote the reviewed draft once. No model/provider/native-runtime acceptance is inferred.
 
 Skills used: make-skill (release construction), task-pipeline (delivery),
 agent-sync (local advisory ownership), evidence-docs (source and check receipts).
+
+## Candidate review and payload
+
+The coordinator independently reviewed `198ee49efaa53737e3872b160cc7adf2d18f58d9`: **PASS**. Version fields,
+new changelog and existing skill metadata agree; there is no executable or workflow
+diff. XR's card correction names the seven actual skill directories.
+
+`npm pack --dry-run --json` exited 0: 39 files, 201455 unpacked bytes;
+no `.env`, agent-sync state or Python cache residue. Both common gate files retain
+the same SHA-256 digests as the independently reviewed FW02 source wave.
+
+Draft [PR 6](https://github.com/ssheleg/xr-dev/pull/6) preserves the
+no-per-push CI policy until local checks finish.
+
+## Local candidate checks
+
+`npm test`: 12 structural checks, seven skills and 25 references pass. `npm run test:negatives`: eight owner plants plus 42 member process controls pass. Installer: 11 cases pass. Both strict Claude manifests pass. `git diff --check` passes.
+All test and strict-validation commands exited 0.
+Local checks do not imply native/model or family-install acceptance.
