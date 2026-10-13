@@ -1,0 +1,80 @@
+{
+  "source_base": "6199f2af23d01d7ae3ce84ef9f3b3820f57356c0",
+  "package_version": "0.3.4",
+  "published_receipt": "docs/evidence/releases/2026-10-13-member-gates/published-readback.json",
+  "payload_files_checked": 39,
+  "all_hashes_and_sizes_match": true,
+  "npm_dry_run_exit": 0,
+  "npm_path_set_equal": true,
+  "local_links": [
+    {
+      "from": "docs/evidence/verification.md",
+      "target": "releases/2026-10-13-member-gates/README.md#published-readback"
+    },
+    {
+      "from": "docs/evidence/verification.md",
+      "target": "releases/2026-10-13-member-gates/published-readback.json"
+    },
+    {
+      "from": "docs/evidence/verification.md",
+      "target": "member-gates-20261013/README.md"
+    },
+    {
+      "from": "docs/evidence/verification.md",
+      "target": "member-gates-headers-20261013.md"
+    },
+    {
+      "from": "docs/evidence/verification.md",
+      "target": "backlog.md"
+    },
+    {
+      "from": "docs/evidence/verification.md",
+      "target": "fw00-verification-index-20261013/README.md"
+    },
+    {
+      "from": "docs/evidence/verification.md",
+      "target": "../HANDOFF.md"
+    },
+    {
+      "from": "docs/HANDOFF.md",
+      "target": "evidence/verification.md"
+    },
+    {
+      "from": "docs/HANDOFF.md",
+      "target": "evidence/fw00-verification-index-20261013/README.md"
+    },
+    {
+      "from": "docs/HANDOFF.md",
+      "target": "evidence/releases/2026-10-13-member-gates/README.md#published-readback"
+    },
+    {
+      "from": "docs/evidence/fw00-verification-index-20261013/README.md",
+      "target": "../releases/2026-10-13-member-gates/README.md"
+    },
+    {
+      "from": "docs/evidence/fw00-verification-index-20261013/README.md",
+      "target": "../member-gates-20261013/README.md"
+    },
+    {
+      "from": "docs/evidence/fw00-verification-index-20261013/README.md",
+      "target": "focused.json"
+    },
+    {
+      "from": "docs/evidence/fw00-verification-index-20261013/README.md",
+      "target": "hub-reader.json"
+    }
+  ],
+  "structural": {
+    "command": "python3 test/validate.py",
+    "exit_code": 0,
+    "stdout": "OK \u2014 12 checks, 7 skills, 25 references\n",
+    "stderr": ""
+  },
+  "broad_owner_gates": "QUEUED_AFTER_TP_FULL",
+  "native_provider_model": "NOT_RUN",
+  "indexed_document_sha256": {
+    "docs/evidence/verification.md": "505eb59f70157a515ac3208af0f925537bba9fdce26d69f3431dba88b1042f32",
+    "docs/HANDOFF.md": "b46fcce4d14017a130f3cf2f87e3929e1ae46ff48f36fd2a2989168522ba45c0",
+    "docs/evidence/fw00-verification-index-20261013/README.md": "1877c94953abcd59e164f538af4324edde9a50a2cc4b82b6e56f198b6f27e7a9"
+  }
+}
