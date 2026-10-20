@@ -27,7 +27,10 @@ SKILLS_DIR = PLUGIN_DIR / "skills"
 
 # Spec caps, and the house limits that leave room for the next edit (5%).
 DESC_CAP = 1024
-DESC_HOUSE = 970
+# The family cap (make-skill doctrine, 2026-10-20): target 400, ceiling 500. Claude Code
+# shares about 30,000 chars of skill listing across every installed skill; measured
+# 2026-10-20, the operator's listing was full and 81 of 134 skills showed no description.
+DESC_HOUSE = 500
 BODY_LINES_CAP = 500
 BODY_LINES_HOUSE = 475
 BODY_TOKENS_CAP = 5000

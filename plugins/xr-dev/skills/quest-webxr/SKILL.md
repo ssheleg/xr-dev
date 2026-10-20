@@ -1,22 +1,15 @@
 ---
 name: quest-webxr
 description: >-
-  Use when the XR experience runs in the browser rather than as a native binary -
-  WebXR in the Meta Quest Browser, IWSDK or three.js or A-Frame, packaging the
-  site as a PWA with the Meta Quest Bubblewrap CLI, in-app purchases through
-  Horizon Billing, remote debugging with Chrome DevTools, and getting a PWA onto
-  the Store. Triggers - "WebXR", "immersive-vr session" / "иммерсивная сессия",
-  "three.js on Quest" / "three.js на Quest", "A-Frame", "IWSDK", "PWA for Quest"
-  / "PWA для Quest", "bubblewrap", "web app manifest for the headset",
-  "browser on Quest" / "браузер в шлеме", "remote debug the headset browser" /
-  "отладить браузер шлема", "web IAP" / "покупки в вебе". NOT for native OpenXR
-  apps (quest-native), native profiling (quest-perf), an APK submission
-  (quest-store), or three.js scene, asset and animation depth off the headset
-  (web3d-dev).
+  Use when the XR experience runs in the Meta Quest Browser: WebXR with IWSDK, three.js or
+  A-Frame, PWA packaging with Bubblewrap, Horizon Billing and remote debugging. NOT for
+  native OpenXR (quest-native), an APK submission (quest-store) or three.js depth off the
+  headset (web3d-dev). Opt out: no xr, без xr. Triggers - "WebXR", "immersive-vr session" /
+  "иммерсивная сессия", "three.js on Quest" / "three.js на Quest", "PWA для Quest", "IWSDK".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.3.4"
+  version: "0.4.0"
 ---
 
 # WebXR and PWAs on Horizon OS
@@ -140,3 +133,9 @@ IWSDK's own guides live under `documentation/iwsdk/guides/`.
 *Read from the Meta web documentation (`pwa-webxr`, `pwa-packaging`, `3d-web`)
 on 2026-09-20; versions there move — re-check `bubblewrap` and IWSDK versions
 before quoting them.*
+
+## Triggers
+
+More phrases that route here: "PWA for Quest" / "PWA для Quest", "A-Frame", "bubblewrap",
+"web app manifest for the headset", "browser on Quest" / "браузер в шлеме", "remote debug
+the headset browser" / "отладить браузер шлема", "web IAP" / "покупки в вебе".

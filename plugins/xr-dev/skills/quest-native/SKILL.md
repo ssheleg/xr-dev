@@ -1,22 +1,16 @@
 ---
 name: quest-native
 description: >-
-  Use when building or reviewing a NATIVE Meta Quest / Horizon OS app in C or C++
-  against OpenXR — the Android manifest and Gradle contract, the Khronos OpenXR
-  loader, session and frame loop, swapchains, Vulkan, passthrough, scene, hand
-  tracking, and the SDK levels the Store now demands.
-  Triggers - "OpenXR app" / "приложение на OpenXR", "native Quest app" / "нативное
-  приложение для Quest", "Quest C++" / "Quest на плюсах", "AndroidManifest for VR" /
-  "манифест для VR", "openxr_loader_for_android", "xrCreateInstance",
-  "xrWaitFrame", "targetSdk for Quest" / "какой targetSdk для Quest",
-  "IMMERSIVE_HMD", "hello_xr", "passthrough in native" / "passthrough нативно".
-  NOT for Unity or Unreal engine implementation, not for
-  a Kotlin Spatial SDK app, not for WebXR or a PWA (quest-webxr), not for
-  profiling (quest-perf), not for Store submission (quest-store).
+  Use when building or reviewing a native Meta Quest app in C or C++ against OpenXR:
+  manifest and Gradle, loader, frame loop, swapchains, Vulkan, passthrough, required SDK
+  levels. NOT for Unity, Unreal, Spatial SDK (quest-spatial), WebXR (quest-webxr), profiling
+  (quest-perf) or Store submission (quest-store). Opt out: no xr, без xr. Triggers - "OpenXR
+  app" / "приложение на OpenXR", "native Quest app" / "нативное приложение для Quest",
+  "xrCreateInstance".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.3.4"
+  version: "0.4.0"
 ---
 
 # Native OpenXR on Horizon OS
@@ -189,3 +183,10 @@ change the reported model, so device-name checks alone are insufficient.
 
 *Documentation facts above were read from developers.meta.com on 2026-09-20;
 re-verify with `metavr docs search` before quoting a number back to anyone.*
+
+## Triggers
+
+More phrases that route here: "Quest C++" / "Quest на плюсах", "AndroidManifest for VR" /
+"манифест для VR", "openxr_loader_for_android", "xrWaitFrame", "targetSdk for Quest" /
+"какой targetSdk для Quest", "IMMERSIVE_HMD", "hello_xr", "passthrough in native" /
+"passthrough нативно".

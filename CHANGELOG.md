@@ -4,6 +4,24 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.4.0 (2026-10-20)
+
+- Every skill's front-matter `description` is now a router, not a manual: one
+  "Use when" sentence, a "NOT for" boundary naming the sibling skill, the opt-out
+  phrase (no xr, без xr) and a few English and Russian triggers. Lengths before and
+  after: quest-perf 901 to 443, quest-tooling 885 to 423, quest-spatial 882 to 443,
+  quest-native 855 to 456, quest-webxr 850 to 443, quest-store 788 to 453,
+  quest-lifecycle 726 to 415 (5,887 to 3,076 chars in total).
+- Why: Claude Code shares about 30,000 chars of skill listing across every installed
+  skill. Measured on 2026-10-20, the operator's listing held 29,995 chars for 134 skills
+  and 81 of them showed no description. Plugin skills cannot be hidden, so description
+  length is the only lever.
+- Every trigger phrase removed from a description moved verbatim (EN/RU pairs kept
+  together) into a new `## Triggers` section at the end of that skill's body, so the
+  family's routing hook still finds each of its words in the skill's text.
+- `test/validate.py`: the house description cap drops from 970 to the family cap of
+  500 chars; the standard's 1024 stays the hard limit. `CLAUDE.md` states the new rule.
+
 ## 0.3.4 — 2026-10-13
 
 - Validate the owner board's table shape, unique task IDs and immediate Markdown

@@ -1,22 +1,16 @@
 ---
 name: quest-spatial
 description: >-
-  Use when a Meta Quest app is built with Meta Spatial SDK — Kotlin and Android
-  rather than Unity or raw OpenXR: whether that lane is right, the toolchain it
-  demands, the ECS model, panels as real Android views, hybrid apps, the runtime
-  budgets that decide a design, the known issues that waste a day, and which
-  sample or documentation page answers a given question. Triggers - "Spatial SDK" /
-  "Спатиал SDK", "Meta Spatial SDK", "Kotlin app for Quest" / "приложение на
-  Kotlin для Quest", "spatial panels" / "панели в VR", "Spatial Editor",
-  "hybrid app" / "гибридное приложение", "glXF", "MRUK", "com.meta.spatial",
-  "how many panels can I open" / "сколько панелей выдержит", "Spatial SDK
-  samples" / "примеры Spatial SDK". NOT for native C++ OpenXR (quest-native),
-  Unity (Meta's hz-unity-* skills), WebXR (quest-webxr), profiling a build
-  (quest-perf), or Store submission (quest-store).
+  Use when a Meta Quest app is built with Meta Spatial SDK in Kotlin and Android: whether
+  the lane fits, its toolchain, ECS, panels as Android views, hybrid apps, budgets and known
+  issues. NOT for native OpenXR (quest-native), Unity, WebXR (quest-webxr), profiling
+  (quest-perf) or Store submission (quest-store). Opt out: no xr, без xr. Triggers -
+  "Spatial SDK" / "Спатиал SDK", "Kotlin app for Quest" / "приложение на Kotlin для Quest",
+  "MRUK".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.3.4"
+  version: "0.4.0"
 ---
 
 # Meta Spatial SDK: the Android lane onto Horizon OS
@@ -168,3 +162,9 @@ interaction models: **exclusive** (one at a time; terminate the old activity
 *Versions, budgets and known issues above were read from the samples repository
 and `developers.meta.com` on 2026-09-20; both move — re-check with
 `metavr docs search "spatial sdk runtime guidelines"` before quoting a number.*
+
+## Triggers
+
+More phrases that route here: "spatial panels" / "панели в VR", "Meta Spatial SDK", "Spatial
+Editor", "hybrid app" / "гибридное приложение", "glXF", "com.meta.spatial", "how many panels
+can I open" / "сколько панелей выдержит", "Spatial SDK samples" / "примеры Spatial SDK".

@@ -37,9 +37,11 @@ All green or the change does not land.
 - **A body names every reference it ships, and ships every reference it names.**
   The validator checks both directions: a reference that stopped shipping reads,
   to an agent, exactly like one that never existed.
-- **Descriptions keep the 60-character reserve** below the 970 house cap. The
-  family ratchets that count; the room exists for the "NOT for" clause the next
-  neighbouring skill will force.
+- **Descriptions stay under the 500-character family cap** (target 400). Claude
+  Code shares one skill-listing budget across every installed skill, and on
+  2026-10-20 a full budget left 81 skills with no description. A description is a
+  router: "Use when", "NOT for" with the sibling skill, the opt-out phrase and a
+  few EN/RU triggers. Further trigger phrases live in the body's `## Triggers`.
 - **Prose is English.** Russian survives only inside trigger phrases, where the
   string itself decides whether the skill fires.
 
