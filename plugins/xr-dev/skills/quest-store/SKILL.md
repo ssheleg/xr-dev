@@ -1,20 +1,16 @@
 ---
 name: quest-store
 description: >-
-  Use when preparing Meta Quest testing, Meta Horizon Store submission, monetization,
-  launch assets or post-launch commercial operation. Covers release channels,
-  applicable VRCs, signing/manifest, account and data tasks, purchases/subscriptions,
-  pre-launch listings, capture provenance and analytics. Triggers - "publish to
-  the store" / "выложить в стор", "Horizon Store", "App Lab", "release channel" /
-  "релизный канал", "VRC", "app review" / "ревью приложения", "Data Use Checkup",
-  "DUC", "store assets" / "ассеты для стора", "test user" / "тестовый аккаунт",
-  "Quest monetization" / "монетизация Quest", "pre-order" / "предзаказ".
-  NOT for a whole-product roadmap (quest-lifecycle), app implementation,
-  profiling (quest-perf), machine setup (quest-tooling), or PWA packaging (quest-webxr).
+  Use when preparing Meta Quest testing, Horizon Store submission, monetization, launch
+  assets or post-launch operation (release channels, VRCs, purchases). NOT for a product
+  roadmap (quest-lifecycle), app code, profiling (quest-perf), machine setup (quest-tooling)
+  or PWA packaging (quest-webxr). Opt out: no xr, без xr. Triggers - "Horizon Store", "App
+  Lab", "VRC", "publish to the store" / "выложить в стор", "Quest monetization" /
+  "монетизация Quest".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.3.4"
+  version: "0.4.0"
 ---
 
 # Shipping to the Meta Horizon Store
@@ -143,3 +139,9 @@ privacy policy URL live.
 read from developers.meta.com (`resources/publish-release-channels`,
 `publish-app-review`, `publish-quest-req`, `publish-mobile-manifest`) on
 2026-09-20. Re-check before a submission: these pages carry their own dates.*
+
+## Triggers
+
+More phrases that route here: "release channel" / "релизный канал", "app review" / "ревью
+приложения", "Data Use Checkup", "DUC", "store assets" / "ассеты для стора", "test user" /
+"тестовый аккаунт", "pre-order" / "предзаказ".

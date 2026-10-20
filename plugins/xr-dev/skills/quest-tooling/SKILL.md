@@ -1,22 +1,15 @@
 ---
 name: quest-tooling
 description: >-
-  Use when setting up or driving the Meta Quest toolchain on a development
-  machine - the metavr CLI and its MCP server, Meta's agentic skills, connecting
-  a headset, installing the managed tools (Perfetto, RenderDoc, OVR Metrics,
-  platform-utils, XR Simulator), and working with no headset at all. Also the
-  hygiene - one install channel per agent, and no skill copies in a repository. Triggers -
-  "metavr", "metavr init", "Meta VR CLI", "Quest MCP" / "MCP для Quest",
-  "connect the headset" / "подключить шлем", "adb to Quest" / "adb к шлему",
-  "install the APK" / "поставить apk на шлем", "developer mode" / "режим
-  разработчика", "XR Simulator" / "симулятор", "no headset" / "нет шлема",
-  "which Quest tools are installed" / "что установлено для Quest",
-  "hz- skills" / "скилы Meta". NOT for writing app code (quest-native), reading
-  a capture (quest-perf), or submitting a build (quest-store).
+  Use when setting up or driving the Meta Quest toolchain on a development machine: the
+  metavr CLI and MCP server, Meta's agent skills, connecting a headset, managed tools, XR
+  Simulator, no headset at all. NOT for app code (quest-native), reading a capture
+  (quest-perf) or submitting a build (quest-store). Opt out: no xr, без xr. Triggers -
+  "metavr", "connect the headset" / "подключить шлем", "adb к шлему", "XR Simulator".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.3.4"
+  version: "0.4.0"
 ---
 
 # The Quest toolchain: one CLI, two interfaces, one channel per agent
@@ -156,3 +149,10 @@ for d in ~/.claude/skills/*/; do n=$(basename "$d"); \
 
 *CLI surface read from `metavr --help` at 1.3.2.2.2 on 2026-09-20; the install
 and init behaviour was measured on this machine the same day.*
+
+## Triggers
+
+More phrases that route here: "adb to Quest" / "adb к шлему", "XR Simulator" / "симулятор",
+"no headset" / "нет шлема", "metavr init", "Meta VR CLI", "Quest MCP" / "MCP для Quest",
+"install the APK" / "поставить apk на шлем", "developer mode" / "режим разработчика", "which
+Quest tools are installed" / "что установлено для Quest", "hz- skills" / "скилы Meta".

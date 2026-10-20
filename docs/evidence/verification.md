@@ -1,5 +1,12 @@
 # Verification evidence — xr-dev
 
+## v0.4.0: short router descriptions (2026-10-20)
+
+| Evidence needed | Owning source | Scope and limits |
+|---|---|---|
+| Description lengths and the 500-char cap | `test/validate.py` (`npm test`, `npm run test:negatives`, both exit 0 on the candidate) | Structure only. No model routing quality is claimed. |
+| Every routed trigger still in the skill text | A scratch check over the umbrella's routing table: 53 triggers, 0 missing from the SKILL.md text, 18 now only in a body `## Triggers` section | Until the umbrella's own check reads the whole SKILL.md, it reports those 18 as unadvertised. |
+
 ## v0.3.4 — published-source evidence index (2026-10-13)
 
 This index makes existing owner evidence discoverable. It does not re-run or

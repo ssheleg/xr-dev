@@ -1,22 +1,16 @@
 ---
 name: quest-perf
 description: >-
-  Use when a Meta Quest / Horizon OS app misses frames, judders, overheats or
-  must be profiled — the frame budget per refresh rate, logcat stats, the GPU%
-  number that lies during frame drops, Dynamic Resolution, foveation,
-  Application SpaceWarp, and capturing with OVR Metrics, Perfetto, simpleperf or
-  RenderDoc. Engine-independent. Triggers - "dropped frames" / "просадка кадров", "judder" /
-  "джаддер", "Quest performance" / "производительность на Quest", "GPU bound" /
-  "упёрлись в GPU", "profile the headset" / "профилировать шлем", "perfetto trace"
-  / "трейс perfetto", "simpleperf", "RenderDoc", "OVR Metrics", "stale frames",
-  "SpaceWarp", "foveated rendering" / "фовеальный рендеринг", "72 vs 90 Hz",
-  "app is hot" / "шлем греется". NOT for wiring the render loop itself
-  (quest-native), not for Store performance VRCs as a submission gate
-  (quest-store), and not for desktop or mobile-phone profiling.
+  Use when a Meta Quest app drops frames, judders, overheats or must be profiled: frame
+  budget per refresh rate, Dynamic Resolution, foveation, SpaceWarp, OVR Metrics, Perfetto
+  or RenderDoc captures. NOT for the render loop itself (quest-native), Store VRCs
+  (quest-store) or phone and desktop profiling. Opt out: no xr, без xr. Triggers - "dropped
+  frames" / "просадка кадров", "Quest performance" / "производительность на Quest", "шлем
+  греется".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.3.4"
+  version: "0.4.0"
 ---
 
 # Quest performance: the budget, the lie, and the capture
@@ -126,3 +120,10 @@ capture for a report that another agent can act on.
 *Frame budgets, the 65%/18.05 ms worked example and the recovery mechanisms were
 read from `documentation/native/android/os-missed-frames.md` on 2026-09-20;
 re-verify with `metavr docs search "missed frames"`.*
+
+## Triggers
+
+More phrases that route here: "profile the headset" / "профилировать шлем", "app is hot" /
+"шлем греется", "judder" / "джаддер", "GPU bound" / "упёрлись в GPU", "perfetto trace" /
+"трейс perfetto", "simpleperf", "RenderDoc", "OVR Metrics", "stale frames", "SpaceWarp",
+"foveated rendering" / "фовеальный рендеринг", "72 vs 90 Hz".
