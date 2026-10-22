@@ -4,6 +4,13 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+- `test/family_gate.py`, the family's canonical member gate (hub B-108, B-109): the board
+  parses (every row as wide as its header, no id twice) and `release.yml` keeps the tag-ancestry
+  check (`fetch-depth: 0`, `git merge-base --is-ancestor`), each watched failing on a plant by
+  `--self-test`. Wired into `npm test`; a byte-for-byte copy of the hub's `member-gate/family_gate.py`.
+
 ## v0.4.2: the ledger records the shipped version
 
 - The verification ledger records this version: 0.4.1 shipped with the ledger still headed by the version before it. No skill changes.
