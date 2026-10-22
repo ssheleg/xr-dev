@@ -1,5 +1,11 @@
 # xr-dev: handoff
 
+## v0.4.1: no private project or service names (2026-10-22)
+
+- **Objective.** Remove private project and service names from shipped skills (operator, 2026-10-22).
+- **Done.** `quest-native/SKILL.md` and `references/project-playbook.md` neutral; version 0.4.1.
+- **Next task.** After merge: tag `v0.4.1`, watch the release run, then the sshlg-skills pin bump.
+
 ## 2026-10-20: v0.4.0, short router descriptions
 
 Objective: free Claude Code's shared skill-listing budget (about 30,000 chars; 81 of

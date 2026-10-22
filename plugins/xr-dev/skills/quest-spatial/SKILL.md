@@ -10,7 +10,7 @@ description: >-
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # Meta Spatial SDK: the Android lane onto Horizon OS
