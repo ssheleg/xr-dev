@@ -1,5 +1,10 @@
 # xr-dev: handoff
 
+## 0.4.2 released and pinned (2026-10-22)
+
+- **State.** xr-dev 0.4.2 is tagged, on npm and pinned by sshlg-skills 1.73.2; installed on the operator machine (every user and local scope).
+- **Next task.** Board empty. Next work comes from the operator's planning; none is assigned here by the hub's M2 plan (`ssheleg/sshlg-skills` `docs/runs/2026-10-22-m2-subscription-growth-plan.md`).
+
 ## v0.4.2: the ledger records the shipped version (2026-10-22)
 
 - **Objective.** Record the shipped version in the verification ledger (the sshlg-skills validator reads it).
