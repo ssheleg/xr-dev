@@ -1,5 +1,11 @@
 # Verification evidence — xr-dev
 
+## Release candidate: v0.4.2 (2026-10-22)
+
+the ledger records the shipped version
+
+Evidence: `npm test` exit 0 on the candidate tree before the PR; the PR CI run and the tag release run are named in docs/HANDOFF.md.
+
 ## v0.4.0: short router descriptions (2026-10-20)
 
 | Evidence needed | Owning source | Scope and limits |

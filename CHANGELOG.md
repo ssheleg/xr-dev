@@ -4,6 +4,10 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## v0.4.2: the ledger records the shipped version
+
+- The verification ledger records this version: 0.4.1 shipped with the ledger still headed by the version before it. No skill changes.
+
 ## v0.4.1: no private project or service names
 
 - `quest-native` named one of the operator's private projects in its lock-file example and a private media service in the project playbook. Both are now neutral ("one Quest project", "the configured asset/job owner"). No behaviour changes.

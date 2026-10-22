@@ -1,5 +1,11 @@
 # xr-dev: handoff
 
+## v0.4.2: the ledger records the shipped version (2026-10-22)
+
+- **Objective.** Record the shipped version in the verification ledger (the sshlg-skills validator reads it).
+- **Done.** Ledger entry v0.4.2.
+- **Next task.** After merge: tag `v0.4.2`, watch the release run, then the sshlg-skills pin bump.
+
 ## v0.4.1: no private project or service names (2026-10-22)
 
 - **Objective.** Remove private project and service names from shipped skills (operator, 2026-10-22).
