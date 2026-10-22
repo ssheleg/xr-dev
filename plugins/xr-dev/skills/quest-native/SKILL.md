@@ -10,7 +10,7 @@ description: >-
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # Native OpenXR on Horizon OS
@@ -108,7 +108,7 @@ before pinning them; they are quoted with their date in
 `references/manifest-and-gradle.md`.
 
 **A lock file is not the build.** Grep `build.gradle` AND whatever dependency
-lock the project keeps: on 2026-09-20 in `elements-vr` the gradle said
+lock the project keeps: on 2026-09-20 in one Quest project the gradle said
 `targetSdk 34` and `dependencies.lock.json` still said `32`, which is a release
 note written against a build that does not exist.
 

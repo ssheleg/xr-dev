@@ -49,7 +49,7 @@ Suggested evidence files, only if the project has no equivalent: `docs/xr/target
 
 ## Runtime AI is a separate latency and data path
 
-Generation servers such as [vLLM-Omni](https://github.com/vllm-project/vllm-omni) can supply prepared speech/images/video or asynchronous NPC services. They do not provide collision-ready geometry or a replacement for the OpenXR frame loop. Route production assets through the configured asset/job owner, such as Asset Foundry when present; use delivered manifests and target gates.
+Generation servers such as [vLLM-Omni](https://github.com/vllm-project/vllm-omni) can supply prepared speech/images/video or asynchronous NPC services. They do not provide collision-ready geometry or a replacement for the OpenXR frame loop. Route production assets through the configured asset/job owner when the machine has one; use delivered manifests and target gates.
 
 Keep requests asynchronous, bound the queue and payload, cancel/ignore obsolete results using scene/session IDs, and cache approved fallbacks. Continue tracking/rendering and essential interactions when offline. Benchmark network/queue/inference/audio-playout separately from frame time; no universal latency claim follows from “streaming.” For camera/microphone input, apply the MR permission/data contract before any off-device transfer.
 
