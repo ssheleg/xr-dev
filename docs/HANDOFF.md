@@ -1,3 +1,10 @@
+## v0.4.3: the family member gate (2026-10-24)
+
+- **Done.** the family member gate: the family member gate (`test/family_gate.py`, with its shared-mechanism
+  declaration) and the documentation merged since v0.4.2, released.
+- **Next task.** After merge: tag `v0.4.3`, watch the release, then the sshlg-skills pin bump; then
+  the highest open board row.
+
 # xr-dev: handoff
 
 ## 0.4.2 released and pinned (2026-10-22)

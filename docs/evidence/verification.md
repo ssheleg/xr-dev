@@ -1,5 +1,10 @@
 # Verification evidence — xr-dev
 
+## Release candidate: v0.4.3 (2026-10-24)
+
+the family member gate. Evidence: the repository gate exits 0 on the candidate tree; the PR CI run
+and the tag release run are named in docs/HANDOFF.md.
+
 ## Release candidate: v0.4.2 (2026-10-22)
 
 the ledger records the shipped version
