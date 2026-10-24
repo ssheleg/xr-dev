@@ -4,7 +4,7 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## v0.4.3: the family member gate
 
 - `test/family_gate.py`, the family's canonical member gate (hub B-108, B-109): the board
   parses (every row as wide as its header, no id twice) and `release.yml` keeps the tag-ancestry
