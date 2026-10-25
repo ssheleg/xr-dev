@@ -1,16 +1,14 @@
 ---
 name: quest-native
 description: >-
-  Use when building or reviewing a native Meta Quest app in C or C++ against OpenXR:
-  manifest and Gradle, loader, frame loop, swapchains, Vulkan, passthrough, required SDK
-  levels. NOT for Unity, Unreal, Spatial SDK (quest-spatial), WebXR (quest-webxr), profiling
-  (quest-perf) or Store submission (quest-store). Opt out: no xr, без xr. Triggers - "OpenXR
-  app" / "приложение на OpenXR", "native Quest app" / "нативное приложение для Quest",
-  "xrCreateInstance".
+  Use when building or reviewing a native Quest app in C/C++ on OpenXR: manifest, frame
+  loop, swapchains, Vulkan, passthrough. NOT for Unity/Unreal, Spatial SDK
+  (quest-spatial), WebXR (quest-webxr) or profiling (quest-perf). Opt out: no xr, без
+  xr. Triggers - "OpenXR app" / "приложение на OpenXR".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.3"
+  version: "0.4.4"
 ---
 
 # Native OpenXR on Horizon OS
@@ -190,3 +188,5 @@ More phrases that route here: "Quest C++" / "Quest на плюсах", "AndroidM
 "манифест для VR", "openxr_loader_for_android", "xrWaitFrame", "targetSdk for Quest" /
 "какой targetSdk для Quest", "IMMERSIVE_HMD", "hello_xr", "passthrough in native" /
 "passthrough нативно".
+
+Moved here from the description in 0.4.4: "нативное приложение для Quest".

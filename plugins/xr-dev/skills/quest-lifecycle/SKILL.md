@@ -1,15 +1,14 @@
 ---
 name: quest-lifecycle
 description: >-
-  Use when planning or auditing a Meta Quest or Horizon OS product end to end, from platform
-  choice to launch and operation; returns a stage, evidence and owner map with one next
-  action. NOT for one engine bug, profiling (quest-perf), upload (quest-store) or generic
-  delivery (task-pipeline). Opt out: no xr, без xr. Triggers - "Quest roadmap" / "план для
-  Quest", "launch our Quest game" / "запустить игру для Quest".
+  Use when planning or auditing a Quest or Horizon OS product from platform choice to
+  operation, as a stage, evidence and owner map. NOT for one engine bug, profiling
+  (quest-perf), upload (quest-store) or delivery (task-pipeline). Opt out: no xr, без
+  xr. Triggers - "Quest roadmap" / "план для Quest".
 license: MIT
 compatibility: Any agent with file reading can plan inline. Writing the lifecycle record needs file access; current research needs network; build, device and Dashboard verification need their actual tools and accounts. Missing capabilities remain explicitly unverified.
 metadata:
-  version: "0.4.3"
+  version: "0.4.4"
 ---
 
 # Quest product lifecycle
@@ -97,3 +96,6 @@ over the operator's permissions or routing. Recheck policies at submission.
 More phrases that route here: "VR product lifecycle" / "полный цикл VR", "what are we
 missing before launch" / "что нужно до релиза", "Oculus app from idea to store" /
 "приложение Oculus от идеи до стора".
+
+Moved here from the description in 0.4.4: "launch our Quest game", "запустить игру для
+Quest".
