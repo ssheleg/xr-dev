@@ -4,6 +4,19 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## v0.4.4: descriptions within a 300-character budget
+
+- Every skill description now fits a budget of about 300 characters (hub board row B-255 (a)):
+  Claude Code lists every installed skill's description each session against a shared budget of
+  about 30,000 characters, and the operator's listing measured 51,178, so less-used skills lost
+  their descriptions. Measured with whitespace collapsed: `quest-lifecycle` 415 → 299,
+  `quest-native` 456 → 296, `quest-perf` 443 → 292, `quest-spatial` 443 → 297, `quest-store` 453 →
+  299, `quest-tooling` 423 → 297, `quest-webxr` 443 → 292; total 3076 → 2072.
+- Each description keeps its router sentence, its boundary against sibling skills, the opt-out
+  phrase and a short English and Russian trigger list. Every quoted trigger the description
+  dropped is kept in the body's `## Triggers` section, so the family hook's words stay advertised
+  (`test/advertised_check.js` in the hub).
+
 ## v0.4.3: the family member gate
 
 - `test/family_gate.py`, the family's canonical member gate (hub B-108, B-109): the board

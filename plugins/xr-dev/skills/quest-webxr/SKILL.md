@@ -1,15 +1,14 @@
 ---
 name: quest-webxr
 description: >-
-  Use when the XR experience runs in the Meta Quest Browser: WebXR with IWSDK, three.js or
-  A-Frame, PWA packaging with Bubblewrap, Horizon Billing and remote debugging. NOT for
-  native OpenXR (quest-native), an APK submission (quest-store) or three.js depth off the
-  headset (web3d-dev). Opt out: no xr, без xr. Triggers - "WebXR", "immersive-vr session" /
-  "иммерсивная сессия", "three.js on Quest" / "three.js на Quest", "PWA для Quest", "IWSDK".
+  Use when the XR experience runs in the Meta Quest Browser: WebXR with IWSDK, three.js
+  or A-Frame, Bubblewrap PWA, Horizon Billing. NOT for native OpenXR (quest-native), APK
+  submission (quest-store) or flat three.js (web3d-dev). Opt out: no xr, без xr.
+  Triggers - "WebXR", "three.js на Quest".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.3"
+  version: "0.4.4"
 ---
 
 # WebXR and PWAs on Horizon OS
@@ -139,3 +138,6 @@ before quoting them.*
 More phrases that route here: "PWA for Quest" / "PWA для Quest", "A-Frame", "bubblewrap",
 "web app manifest for the headset", "browser on Quest" / "браузер в шлеме", "remote debug
 the headset browser" / "отладить браузер шлема", "web IAP" / "покупки в вебе".
+
+Moved here from the description in 0.4.4: "immersive-vr session", "иммерсивная сессия",
+"three.js on Quest".

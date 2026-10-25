@@ -2,15 +2,13 @@
 name: quest-store
 description: >-
   Use when preparing Meta Quest testing, Horizon Store submission, monetization, launch
-  assets or post-launch operation (release channels, VRCs, purchases). NOT for a product
-  roadmap (quest-lifecycle), app code, profiling (quest-perf), machine setup (quest-tooling)
-  or PWA packaging (quest-webxr). Opt out: no xr, без xr. Triggers - "Horizon Store", "App
-  Lab", "VRC", "publish to the store" / "выложить в стор", "Quest monetization" /
-  "монетизация Quest".
+  or post-launch operation (release channels, VRCs). NOT for a roadmap
+  (quest-lifecycle), profiling (quest-perf) or PWA packaging (quest-webxr). Opt out: no
+  xr, без xr. Triggers - "Horizon Store", "выложить в стор".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.3"
+  version: "0.4.4"
 ---
 
 # Shipping to the Meta Horizon Store
@@ -145,3 +143,6 @@ read from developers.meta.com (`resources/publish-release-channels`,
 More phrases that route here: "release channel" / "релизный канал", "app review" / "ревью
 приложения", "Data Use Checkup", "DUC", "store assets" / "ассеты для стора", "test user" /
 "тестовый аккаунт", "pre-order" / "предзаказ".
+
+Moved here from the description in 0.4.4: "App Lab", "publish to the store", "Quest
+monetization", "монетизация Quest".

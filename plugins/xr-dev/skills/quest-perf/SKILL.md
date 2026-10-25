@@ -1,16 +1,14 @@
 ---
 name: quest-perf
 description: >-
-  Use when a Meta Quest app drops frames, judders, overheats or must be profiled: frame
-  budget per refresh rate, Dynamic Resolution, foveation, SpaceWarp, OVR Metrics, Perfetto
-  or RenderDoc captures. NOT for the render loop itself (quest-native), Store VRCs
-  (quest-store) or phone and desktop profiling. Opt out: no xr, без xr. Triggers - "dropped
-  frames" / "просадка кадров", "Quest performance" / "производительность на Quest", "шлем
-  греется".
+  Use when a Meta Quest app drops frames, overheats or needs profiling: frame budgets,
+  foveation, SpaceWarp, OVR Metrics, Perfetto, RenderDoc. NOT for the render loop
+  (quest-native) or non-Quest profiling. Opt out: no xr, без xr. Triggers - "dropped
+  frames" / "просадка кадров", "шлем греется".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.3"
+  version: "0.4.4"
 ---
 
 # Quest performance: the budget, the lie, and the capture
@@ -127,3 +125,5 @@ More phrases that route here: "profile the headset" / "профилироват�
 "шлем греется", "judder" / "джаддер", "GPU bound" / "упёрлись в GPU", "perfetto trace" /
 "трейс perfetto", "simpleperf", "RenderDoc", "OVR Metrics", "stale frames", "SpaceWarp",
 "foveated rendering" / "фовеальный рендеринг", "72 vs 90 Hz".
+
+Moved here from the description in 0.4.4: "производительность на Quest".

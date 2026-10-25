@@ -1,15 +1,14 @@
 ---
 name: quest-tooling
 description: >-
-  Use when setting up or driving the Meta Quest toolchain on a development machine: the
-  metavr CLI and MCP server, Meta's agent skills, connecting a headset, managed tools, XR
-  Simulator, no headset at all. NOT for app code (quest-native), reading a capture
-  (quest-perf) or submitting a build (quest-store). Opt out: no xr, без xr. Triggers -
-  "metavr", "connect the headset" / "подключить шлем", "adb к шлему", "XR Simulator".
+  Use when setting up or driving the Meta Quest toolchain on a dev machine: metavr CLI
+  and MCP, Meta's agent skills, a connected headset, XR Simulator. NOT for app code
+  (quest-native), captures (quest-perf) or submission (quest-store). Opt out: no xr, без
+  xr. Triggers - "metavr", "подключить шлем".
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.3"
+  version: "0.4.4"
 ---
 
 # The Quest toolchain: one CLI, two interfaces, one channel per agent
@@ -156,3 +155,5 @@ More phrases that route here: "adb to Quest" / "adb к шлему", "XR Simulato
 "no headset" / "нет шлема", "metavr init", "Meta VR CLI", "Quest MCP" / "MCP для Quest",
 "install the APK" / "поставить apk на шлем", "developer mode" / "режим разработчика", "which
 Quest tools are installed" / "что установлено для Quest", "hz- skills" / "скилы Meta".
+
+Moved here from the description in 0.4.4: "connect the headset".
