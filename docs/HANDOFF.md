@@ -1,3 +1,10 @@
+## v0.4.6: the gate asks the umbrella about routed triggers (2026-10-28)
+
+- **Done.** the gate asks the umbrella about routed triggers: the family member gate (`test/family_gate.py`, with its shared-mechanism
+  declaration) and the documentation merged since v0.4.5, released.
+- **Next task.** After merge: tag `v0.4.6`, watch the release, then the sshlg-skills pin bump; then
+  the highest open board row.
+
 ## v0.4.5: quest-store and quest-tooling advertise forms that name the headset (2026-10-28)
 
 - **Done.** quest-store and quest-tooling advertise forms that name the headset: the family member gate (`test/family_gate.py`, with its shared-mechanism
