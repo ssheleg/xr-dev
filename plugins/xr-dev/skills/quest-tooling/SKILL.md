@@ -8,7 +8,7 @@ description: >-
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.4"
+  version: "0.4.5"
 ---
 
 # The Quest toolchain: one CLI, two interfaces, one channel per agent
@@ -157,3 +157,7 @@ More phrases that route here: "adb to Quest" / "adb к шлему", "XR Simulato
 Quest tools are installed" / "что установлено для Quest", "hz- skills" / "скилы Meta".
 
 Moved here from the description in 0.4.4: "connect the headset".
+
+Qualified forms that name the headset, added in 0.4.5 (hub B-298): "Meta XR Simulator" /
+"симулятор Quest", "install the APK on Quest" / "поставить apk на Quest", "Quest developer mode" /
+"режим разработчика на Quest".

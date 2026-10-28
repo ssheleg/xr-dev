@@ -1,3 +1,12 @@
+## v0.4.5: quest-store and quest-tooling advertise forms that name the headset
+
+- **quest-store and quest-tooling advertise forms that name the headset** (hub board row B-298):
+  their generic store and Android words ("release channel", "test user", "developer mode",
+  "install the APK", "симулятор") route nowhere in the hub, because every mobile app uses them.
+  The `## Triggers` sections now also carry qualified forms ("Quest release channel", "Horizon
+  Store review", "Quest developer mode", "Meta XR Simulator" and their Russian pairs) that the hub
+  can route without speaking for phone apps. Descriptions are unchanged.
+
 # Changelog
 
 All notable changes to this project are documented here. The format follows

@@ -8,7 +8,7 @@ description: >-
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.4"
+  version: "0.4.5"
 ---
 
 # Shipping to the Meta Horizon Store
@@ -146,3 +146,8 @@ More phrases that route here: "release channel" / "релизный канал",
 
 Moved here from the description in 0.4.4: "App Lab", "publish to the store", "Quest
 monetization", "монетизация Quest".
+
+Qualified forms that name the headset, added in 0.4.5 (hub B-298): "Quest release channel" /
+"релизный канал Quest", "Horizon Store review" / "ревью в Horizon Store", "Horizon Store assets" /
+"ассеты для Horizon Store", "Quest test user" / "тестовый аккаунт Quest", "Horizon Store
+pre-order" / "предзаказ в Horizon Store", "publish to the Horizon Store" / "выложить в Horizon Store".

@@ -8,7 +8,7 @@ description: >-
 license: MIT
 compatibility: Any agent with file reading can plan inline. Writing the lifecycle record needs file access; current research needs network; build, device and Dashboard verification need their actual tools and accounts. Missing capabilities remain explicitly unverified.
 metadata:
-  version: "0.4.4"
+  version: "0.4.5"
 ---
 
 # Quest product lifecycle
