@@ -311,6 +311,33 @@ DEFECTS = [
 ]
 
 
+@check
+def check_routed_triggers_still_advertised():
+    """The family's routing hook fires on words this member's SKILL.md files must keep.
+
+    A member can ship green on its own gate having dropped a phrase that is a live trigger
+    in the umbrella's `lib/triggers.js`, or having added a `## Triggers` phrase no route
+    reaches; it releases BEFORE the umbrella re-pins. The umbrella's own checker is asked
+    (hub B-305), so there is no copy to drift. With no umbrella above this checkout, the
+    ordinary state of a standalone clone and of this repository's CI, it says so and
+    passes nothing silently.
+    """
+    script = ROOT.parent.parent / "test" / "advertised_check.js"
+    if not script.is_file():
+        print("note: routed triggers: no sshlg-skills umbrella above this checkout")
+        return
+    try:
+        proc = subprocess.run(["node", str(script), "--member", "xr-dev", "--root", str(ROOT)],
+                              capture_output=True, text=True, timeout=60)
+    except (OSError, subprocess.SubprocessError) as exc:
+        print(f"note: routed triggers: could not run the umbrella's checker ({exc})")
+        return
+    if proc.returncode == 1:
+        fail((proc.stdout + proc.stderr).strip())
+    elif proc.returncode != 0:
+        print(f"note: routed triggers: {(proc.stderr or 'the checker could not look').strip()}")
+
+
 def _patch_json(path: Path, patch: dict) -> None:
     doc = json.loads(path.read_text())
     doc.update(patch)

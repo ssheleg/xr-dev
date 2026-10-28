@@ -1,3 +1,11 @@
+## v0.4.6: the gate asks the umbrella about routed triggers
+
+- **The gate asks the umbrella whether routed triggers are still advertised** (hub board row
+  B-305): `test/validate.py` now calls the hub's `test/advertised_check.js` the way the other
+  members do, in both directions (a routed trigger this member dropped, and an advertised phrase
+  no route reaches). Inside the hub's submodule checkout it fails the gate; in a standalone clone
+  it prints a note, because it cannot look.
+
 ## v0.4.5: quest-store and quest-tooling advertise forms that name the headset
 
 - **quest-store and quest-tooling advertise forms that name the headset** (hub board row B-298):
