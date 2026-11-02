@@ -13,6 +13,7 @@ the guard stays green. A validator nobody has watched fail is decoration.
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -322,7 +323,8 @@ def check_routed_triggers_still_advertised():
     ordinary state of a standalone clone and of this repository's CI, it says so and
     passes nothing silently.
     """
-    script = ROOT.parent.parent / "test" / "advertised_check.js"
+    # B-304: a standalone CI clone points SSHLG_HUB_ROOT at a checkout of the hub.
+    script = (Path(os.environ["SSHLG_HUB_ROOT"]) if os.environ.get("SSHLG_HUB_ROOT") else ROOT.parent.parent) / "test" / "advertised_check.js"
     if not script.is_file():
         print("note: routed triggers: no sshlg-skills umbrella above this checkout")
         return
