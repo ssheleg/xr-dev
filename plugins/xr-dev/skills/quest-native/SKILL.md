@@ -8,7 +8,7 @@ description: >-
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.6"
+  version: "0.4.7"
 ---
 
 # Native OpenXR on Horizon OS
@@ -88,8 +88,9 @@ Current Meta manifest segment for an immersive OpenXR app (rechecked 2026-09-21)
   manifest doc. **Never `noHistory`.**
 - Release only: `android:debuggable` false or absent, `installLocation="auto"`,
   a unique `android:label`, and `com.oculus.supportedDevices` listing
-  `quest2|questpro|quest3|quest3s` — a device outside that list runs in
-  compatibility mode and reports itself as an older generation.
+  `quest2|questpro|quest3|quest3s|vrglasses` (checked 2026-11-11). A device
+  outside that list runs in compatibility mode and reports itself as an older
+  generation.
 - A pure NativeActivity app may ship `android:hasCode="false"`. The Platform SDK
   is a Java library: adding it removes that option.
 
@@ -98,10 +99,11 @@ Full element-by-element contract, both manifests side by side:
 
 ## Step 3 — SDK levels, which changed in 2026
 
-Recommended for in-lifecycle devices (Quest 2, Pro, 3 family): **minSdk 32,
-targetSdk 34, compileSdk ≥ targetSdk**. The legal range is minSdk 29–34 and
-targetSdk 32–34 for immersive apps (32–36 for 2D panel apps) — but **an app
-created since 1 March 2026 must target 34**. Read the two tables from the source
+Recommended for in-lifecycle devices (Quest 2, Pro, 3 family; release manifest
+page dated 2026-10-15, checked 2026-11-11): **minSdk 32, targetSdk 34, compileSdk
+≥ targetSdk**. The legal range is minSdk 29–34 and targetSdk 32–34 for immersive
+apps (32–37 for 2D panel apps), but **an app created since 1 March 2026 must
+target 34**. Read the two tables from the source
 before pinning them; they are quoted with their date in
 `references/manifest-and-gradle.md`.
 

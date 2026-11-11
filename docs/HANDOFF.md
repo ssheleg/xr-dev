@@ -1,3 +1,11 @@
+## v0.4.7: host MCP config instead of a retired gateway (2026-11-11)
+
+- **Done.** Audit 2026-11-11 findings X1 to X4: quest-tooling MCP registration guidance is
+  host-generic (no decommissioned gateway, no private path); quest-store and quest-native platform
+  facts rechecked and dated; quest-webxr names the three.js renderer for immersive WebXR.
+- **Next task.** After merge: tag `v0.4.7`, watch the release, then the sshlg-skills pin bump; then
+  the highest open board row.
+
 ## v0.4.6: the gate asks the umbrella about routed triggers (2026-10-28)
 
 - **Done.** the gate asks the umbrella about routed triggers: the family member gate (`test/family_gate.py`, with its shared-mechanism

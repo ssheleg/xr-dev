@@ -1,5 +1,12 @@
 # Verification evidence — xr-dev
 
+## Release candidate: v0.4.7 (2026-11-11)
+
+Host MCP config instead of a retired gateway; dated platform facts. Evidence: the repository gate
+exits 0 on the candidate tree; Meta's VRC page (last updated 2026-08-19) and release manifest page
+(`publish-mobile-manifest.md`, last updated 2026-10-15) and the three@0.187.0 npm tarball were read
+on 2026-11-11. The PR CI run and the tag release run are named in docs/HANDOFF.md.
+
 ## Release candidate: v0.4.6 (2026-10-28)
 
 the gate asks the umbrella about routed triggers. Evidence: the repository gate exits 0 on the candidate tree; the PR CI run

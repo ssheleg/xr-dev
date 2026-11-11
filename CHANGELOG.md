@@ -1,3 +1,24 @@
+## v0.4.7: host MCP config instead of a retired gateway; dated platform facts
+
+- **quest-tooling no longer routes new MCP servers through a machine gateway.** `SKILL.md` and
+  `references/research-navigation.md` and `references/source-research.md` named a private
+  gateway file for new standalone stdio servers; that gateway was decommissioned on 2026-09-14.
+  The doctrine now says: check whether the server is already registered (by a plugin or in the
+  agent host's own MCP config), register a missing one once in the host's MCP config, never
+  twice. No private machine path remains. The eval scenario `s02` expectation follows; its
+  2026-09-21 result carries a dated note (not re-run).
+- **quest-store dates the retired VRC.** `VRC.Quest.Performance.2` is RETIRED as of 2026-11-11
+  (Meta's VRC page, last updated 2026-08-19).
+- **quest-native rechecked against Meta's release manifest page** (last updated 2026-10-15,
+  checked 2026-11-11): "in-lifecycle devices (Quest 2, Quest Pro, Quest 3 family)" holds; the 2D
+  panel targetSdk range is now 32-37 (was 32-36); `com.oculus.supportedDevices` for all current
+  devices adds `vrglasses` (Meta VR Glasses).
+- **quest-webxr names the three.js renderer an immersive session needs** (three.js r187, checked
+  2026-11-11 in `src/renderers/common/XRManager.js`): `WebGLRenderer` is the stable route;
+  `WebGPURenderer` enters XR on its WebGL2 backend, and on its WebGPU backend only with
+  `XRGPUBinding` and the `webgpu` session feature. It points to web3d-dev `web3d-runtime`.
+- Descriptions are unchanged.
+
 ## v0.4.6: the gate asks the umbrella about routed triggers
 
 - **The gate asks the umbrella whether routed triggers are still advertised** (hub board row

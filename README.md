@@ -68,8 +68,8 @@ Use one channel per agent. For a composing family installation, update through
 ## Tools and source freshness
 
 Inspect existing CLI/MCP/plugin registration before setup. `quest-tooling` maps
-Meta VR CLI, device/debug/profiling tools and Markdown documentation indexes,
-with the operator's gateway policy taking precedence over generic setup examples.
+Meta VR CLI, device/debug/profiling tools and Markdown documentation indexes;
+a missing MCP server is registered once in the agent host's own MCP config.
 No MCP uses CLI; no CLI uses official docs; absent engine/device/account access
 leaves dependent checks explicitly unverified. An HTTP 200 may be an unavailable
 page, and a source example is not a universal SDK or Store requirement.

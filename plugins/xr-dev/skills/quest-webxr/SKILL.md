@@ -8,7 +8,7 @@ description: >-
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.6"
+  version: "0.4.7"
 ---
 
 # WebXR and PWAs on Horizon OS
@@ -44,6 +44,12 @@ if (supported) {
   await renderer.xr.setSession(session);          // three.js
 }
 ```
+
+Which renderer (three.js r187, checked 2026-11-11): `WebGLRenderer` with
+`renderer.xr.enabled = true` is the stable route. `WebGPURenderer` enters XR on
+its WebGL2 backend (`forceWebGL: true`, or `examples/jsm/webxr/WebGLXRFallback.js`);
+its WebGPU backend needs `XRGPUBinding` and the `webgpu` session feature, so
+probe them in the Quest Browser build first. Scene side: web3d-dev `web3d-runtime`.
 
 A-Frame does the same through `scene.enterVR()` on `renderstart`. Meta's own
 snippets gate this on `window.getDigitalGoodsService !== undefined` — present
