@@ -8,7 +8,7 @@ description: >-
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.6"
+  version: "0.4.7"
 ---
 
 # Shipping to the Meta Horizon Store
@@ -70,7 +70,8 @@ test users.
 
 The full tables, with which apply to immersive versus 2D apps, are in
 `references/vrc-checklist.md`. Fetch the live list before a submission —
-requirements retire and appear (`VRC.Quest.Performance.2` is RETIRED today).
+requirements retire and appear (`VRC.Quest.Performance.2` is RETIRED as of
+2026-11-11, page last updated 2026-08-19).
 
 ## The release manifest is not the development manifest
 

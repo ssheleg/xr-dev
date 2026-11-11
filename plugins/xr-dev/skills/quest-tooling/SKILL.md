@@ -8,7 +8,7 @@ description: >-
 license: MIT
 compatibility: Any agent can read this workflow. Live source checks need network; build, device, profiling and Store actions need the named installed tools and accounts. Missing capabilities use the inline fallback and leave dependent checks unverified.
 metadata:
-  version: "0.4.6"
+  version: "0.4.7"
 ---
 
 # The Quest toolchain: one CLI, two interfaces, one channel per agent
@@ -36,7 +36,7 @@ Read `references/source-research.md` for current-source discovery, unavailable M
 | npm global | `npm install -g metavr` | **never on its own** — needs `npm update -g metavr` |
 
 Two of these installed at once is a version split waiting to be read as a bug:
-on this estate `~/.metavr/bin/metavr` (1.3.2.2.2) and `/opt/homebrew/bin/metavr`
+on one measured machine `~/.metavr/bin/metavr` (1.3.2.2.2) and `/opt/homebrew/bin/metavr`
 (npm 1.3.2) both answered to `metavr`, and PATH order decided which. Check with
 `which -a metavr` and keep one.
 
@@ -54,11 +54,11 @@ Measured 2026-09-20 in a game repository: 29 skills × 25 directories = **4129
 files, 47 MB**, untracked, uncovered by `.gitignore` — and the next `git add -A`
 committed the lot into the product.
 
-On this estate, inspect the gateway/plugin registration before setup. A new
-standalone metavr stdio server belongs in the gateway; `metavr mcp install`
-examples configure agents directly and are not the default here. If a selected
-host installation is needed, inspect `metavr init --help` and the target paths
-first. Do not ignore project-owned `.agents` or other existing files broadly.
+Before setup, check whether metavr's MCP server is already registered, by
+Meta's plugin or in the agent host's own MCP config. If it is not, register it
+once in the selected host's MCP config; `metavr mcp install` writes host configs,
+so read its `--help` for which ones first. If a selected host installation is
+needed, inspect `metavr init --help` and the target paths first. Do not ignore project-owned `.agents` or other existing files broadly.
 
 ## The command map
 
@@ -87,12 +87,11 @@ still a machine that cannot run anything.
 ## The MCP server, and how it ends up registered twice
 
 `metavr mcp server` is the stdio server. Meta's plugin may own its
-registration; otherwise the operator's configured gateway can expose it.
-Do not register both. On this estate, new standalone stdio/static-token servers
-go through `~/.config/agentgateway/servers.yaml` and the existing generator/migration
-flow; OAuth protected-resource servers stay at the agent. Plugin-managed MCP
-stays with the plugin. A direct `.mcp.json` is appropriate only where the selected
-deployment policy calls for it, not a universal project setup recipe.
+registration; otherwise it is declared in the agent host's own MCP config (user
+or project scope). Inspect both before adding anything and never register it
+twice: plugin-managed MCP stays with the plugin, and OAuth protected-resource
+servers authenticate at the host. A project `.mcp.json` is one host-config
+option, not a universal project setup recipe.
 
 `metavr xroperator status` shows whether the XR Operator proxy is installed and
 **federated into metavr's own MCP server** — when it is, a running XR app can be

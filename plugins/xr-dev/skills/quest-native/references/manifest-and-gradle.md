@@ -55,7 +55,7 @@ Sources: [native manifest](https://developers.meta.com/horizon/documentation/nat
 | `android.hardware.vr.headtracking` | `required="true"` for immersive; omitted or `false` for a 2D panel app |
 | `android:excludeFromRecents` | `true` in the release launch activity |
 | intent filter | `MAIN` + `LAUNCHER`; current Meta OpenXR release example adds `com.oculus.intent.category.VR` |
-| `com.oculus.supportedDevices` | `quest2\|questpro\|quest3\|quest3s` as a `meta-data` element in `application` |
+| `com.oculus.supportedDevices` | `quest2\|questpro\|quest3\|quest3s\|vrglasses` (all current devices; `vrglasses` is Meta VR Glasses, checked 2026-11-11) as a `meta-data` element in `application` |
 
 The snippet is a manifest segment, not a complete generated project. Verify
 merged APK output and preserve additional categories required by the chosen
@@ -66,12 +66,13 @@ installing happily when sideloaded, which is what makes it a late surprise.
 
 ## SDK levels, with the 2026 rule
 
-Recommended for in-lifecycle devices (Quest 2, Quest Pro, Quest 3 family):
+Recommended for in-lifecycle devices (Quest 2, Quest Pro, Quest 3 family), as the
+release manifest page (dated 2026-10-15) words it, checked 2026-11-11:
 
 | | minSdkVersion | targetSdkVersion | compileSdkVersion |
 |---|---|---|---|
 | Recommended | 32 | 34 | 34 |
-| Legal range | 29–34 | 32–34 immersive, 32–36 for 2D | ≥ targetSdkVersion |
+| Legal range | 29–34 | 32–34 immersive, 32–37 for 2D | ≥ targetSdkVersion |
 
 **Apps created since 1 March 2026 must set `targetSdkVersion` to 34.** Horizon
 OS has been Android 14 (SDK 34) since HzOS v76 in April 2025; older releases

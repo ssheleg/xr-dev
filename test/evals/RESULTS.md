@@ -19,6 +19,10 @@ active in these isolated arms. No claim of real-world task success follows.
 | Explicit Meta Spatial cooperative hybrid | Recognized Spatial but blurred exclusivity with immersion and treated finishing activities as broadly unnecessary | Distinguished exclusive/cooperative transitions, persistent state and device-only evidence; concrete state/transition test plan |
 | Soft-200 docs, Spatial alias, duplicate MCP, retired analytics | Correctly questioned sources/duplicates; lacked the actual Spatial index and analytics migration facts | Named versioned Spatial index, HTML/content fallback, gateway/plugin discovery and Funnel migration/attribution distinction |
 
+Note 2026-11-11: the gateway wording these probes rewarded was replaced by
+host MCP config guidance (the machine gateway it named was decommissioned). The
+probes were not re-run; this row records the 2026-09-21 text.
+
 The initial hybrid prompt did not name Meta explicitly; it was discarded as an
 ambiguous instrument and **both arms were rerun** with Meta Quest/Horizon OS and
 Meta Spatial SDK named. Only corrected inputs/outputs are recorded here.

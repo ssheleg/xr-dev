@@ -27,7 +27,7 @@
       "files": [],
       "expected_behavior": [
         "Does not run `metavr init` with its all-agents default inside the repo",
-        "Discovers existing registration and operator policy; on this estate standalone stdio goes through the gateway, while plugin-owned registration is not duplicated",
+        "Discovers existing registration (plugin or the host's MCP config); registers a missing standalone server once in the host's MCP config and never duplicates a plugin-owned registration",
         "Does not blindly ignore an existing project .agents directory or install every agent; inspects intended destinations before a selected install",
         "Warns that a plain copy under .claude/skills shadows the meta-vr plugin",
         "Notes that skills load at session start, so the agent must restart"
